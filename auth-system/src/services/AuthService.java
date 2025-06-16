@@ -1,15 +1,10 @@
 package services;
 
 import java.util.HashMap;
-
 import models.User;
 
 public class AuthService {
-  private HashMap<String, User> users;
-
-  public AuthService() {
-    users = new HashMap<>();
-  }
+  private final HashMap<String, User> users = new HashMap<>();
 
   public boolean register(String username, String password, String email) {
     if (users.containsKey(username)) {
@@ -18,7 +13,7 @@ public class AuthService {
     }
     for (User user : users.values()) {
       if (user.getEmail().equalsIgnoreCase(email)) {
-        System.out.println("EMail already registered.");
+        System.out.println("Email already registered.");
         return false;
       }
     }

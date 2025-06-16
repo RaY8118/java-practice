@@ -2,11 +2,10 @@ package services;
 
 import java.time.LocalDate;
 import java.util.HashMap;
-
 import models.Expense;
 
 public class ExpenseService {
-  private HashMap<Integer, Expense> expenses = new HashMap<>();
+  private final HashMap<Integer, Expense> expenses = new HashMap<>();
   private int nextId = 1;
 
   public void addExpense(String description, double amount, String category, LocalDate date) {

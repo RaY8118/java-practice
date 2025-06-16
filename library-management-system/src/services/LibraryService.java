@@ -1,13 +1,12 @@
 package services;
 
+import java.util.ArrayList;
+import java.util.List;
 import models.Book;
 import models.User;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LibraryService {
-  private List<Book> books = new ArrayList<>();
+  private final List<Book> books = new ArrayList<>();
 
   public void addBook(Book book) {
     books.add(book);
