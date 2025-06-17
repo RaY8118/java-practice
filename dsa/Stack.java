@@ -1,65 +1,65 @@
+
 public class Stack {
-  private int[] stack;
-  private int top;
-  private int capacity;
 
-  public Stack(int size) {
-    stack = new int[size];
-    capacity = size;
-    top = -1;
-  }
+    private final int[] stack;
+    private int top;
+    private final int capacity;
 
-  public void push(int value) {
-    if (top == capacity - 1) {
-      System.out.println("Stack is overflow");
+    public Stack(int size) {
+        stack = new int[size];
+        capacity = size;
+        top = -1;
     }
-    stack[++top] = value;
-  }
 
-  public int pop() {
-    if (top == -1) {
-      System.out.println("Stack is empty");
-      return -1;
+    public void push(int value) {
+        if (top == capacity - 1) {
+            System.out.println("Stack is overflow");
+        }
+        stack[++top] = value;
     }
-    return stack[top--];
-  }
 
-  public int peek() {
-    if (top == -1) {
-      System.out.println("Stack is empty");
-      return -1;
+    public int pop() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+        return stack[top--];
     }
-    return stack[top];
-  }
 
-  public boolean isEmpty() {
-    return top == -1;
-  }
-
-  public int size() {
-    return top + 1;
-  }
-
-  public void display() {
-    if (top == -1) {
-      System.out.println("Stack is empty");
+    public int peek() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+            return -1;
+        }
+        return stack[top];
     }
-    for (int i = top; i >= 0; i--) {
-      System.out.println(stack[i]);
+
+    public boolean isEmpty() {
+        return top == -1;
     }
-  }
 
-  public static void main(String[] args) {
-    Stack stack = new Stack(5);
+    public int size() {
+        return top + 1;
+    }
 
-    stack.push(10);
-    stack.push(20);
-    stack.push(30);
-    stack.push(40);
+    public void display() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+        }
+        for (int i = top; i >= 0; i--) {
+            System.out.println(stack[i]);
+        }
+    }
 
-    System.out.println("Top element is:" + stack.peek());
+    public static void main(String[] args) {
+        Stack stack = new Stack(5);
 
-    stack.display();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.push(40);
 
-  }
+        stack.display();
+
+    }
 }
