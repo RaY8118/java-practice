@@ -1,6 +1,7 @@
 package com.example.data.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,17 +19,57 @@ public class ServiceDao implements Dao<Service, UUID> {
     private static final Logger LOGGER = Logger.getLogger(ServiceDao.class.getName());
 
     private static final String GET_ALL = "select service_id, name, price from wisdom.services";
+    private static final String GET_BY_ID = "select service_id, name, price from wisdom.services where service_id = ?";
+    private static final String CREATE = "insert into wisdom.services (service_id, name, price) values (?, ?, ?)";
+    private static final String UPDATE = "update wisdom.services set name = ?, price = ? where service_id = ?";
+    private static final String DELETE = "delete from wisdom.services where service_id = ?";
 
     @Override
     public Service create(Service entity) {
-        // TODO Auto-generated method stub
-        return null;
+        UUID serviceId = UUID.randomUUID();
+        Connection connection = DatabaseUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(CREATE);
+            statement.setObject(1, serviceId);
+            statement.setObject(2, entity.getName());
+            statement.setObject(3, entity.getPrice());
+            statement.execute();
+            connection.commit();
+            statement.close();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException sqle) {
+                DatabaseUtils.handleSqlException("ServiceDao.create.rollback", sqle, LOGGER);
+            }
+            DatabaseUtils.handleSqlException("ServiceDao.create", e, LOGGER);
+        }
+        Optional<Service> service = this.getOne(serviceId);
+        if (!service.isPresent()) {
+            return null;
+        }
+        return service.get();
     }
 
     @Override
     public void delete(UUID id) {
-        // TODO Auto-generated method stub
-
+        Connection connection = DatabaseUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(DELETE);
+            statement.setObject(1, id);
+            statement.executeUpdate();
+            connection.commit();
+            statement.close();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException sqle) {
+                DatabaseUtils.handleSqlException("ServiceDao.update.rollback", sqle, LOGGER);
+            }
+            DatabaseUtils.handleSqlException("ServiceDao.update", e, LOGGER);
+        }
     }
 
     @Override
@@ -46,14 +87,41 @@ public class ServiceDao implements Dao<Service, UUID> {
 
     @Override
     public Optional<Service> getOne(UUID id) {
-        // TODO Auto-generated method stub
+        try (PreparedStatement statement = DatabaseUtils.getConnection().prepareStatement(GET_BY_ID)) {
+            statement.setObject(1, id);
+            ResultSet rs = statement.executeQuery();
+            List<Service> services = this.processResultSet(rs);
+            if (services.isEmpty()) {
+                return Optional.empty();
+            }
+            return Optional.of(services.get(0));
+        } catch (SQLException e) {
+            DatabaseUtils.handleSqlException("ServiceDao.getAll", e, LOGGER);
+        }
         return Optional.empty();
     }
 
     @Override
     public Service update(Service entity) {
-        // TODO Auto-generated method stub
-        return null;
+        Connection connection = DatabaseUtils.getConnection();
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement statement = connection.prepareStatement(UPDATE);
+            statement.setString(1, entity.getName());
+            statement.setBigDecimal(2, entity.getPrice());
+            statement.setObject(3, entity.getServiceId());
+            statement.execute();
+            connection.commit();
+            statement.close();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException sqle) {
+                DatabaseUtils.handleSqlException("ServiceDao.update.rollback", sqle, LOGGER);
+            }
+            DatabaseUtils.handleSqlException("ServiceDao.update", e, LOGGER);
+        }
+        return this.getOne(entity.getServiceId()).get();
     }
 
     private List<Service> processResultSet(ResultSet rs) throws SQLException {
