@@ -83,16 +83,15 @@ public class Mobile {
   }
 
   public static Mobile getMostExpensive5GEnabledMobile(Mobile[] mobiles) {
-    for (int i = 0; i < mobiles.length; i++) {
-      for (int j = i + 1; j < mobiles.length; j++) {
-        if (mobiles[i].getPrice() > mobiles[j].getPrice()) {
-          Mobile temp = mobiles[i];
-          mobiles[i] = mobiles[j];
-          mobiles[j] = temp;
+    Mobile mostExpensive = null;
+    for (Mobile mobile : mobiles) {
+      if (mobile.isIs5GEnabled()) {
+        if (mostExpensive == null || mobile.getPrice() > mostExpensive.getPrice()) {
+          mostExpensive = mobile;
         }
       }
     }
-    return mobiles[mobiles.length - 1];
+    return mostExpensive;
   }
 
   @Override
@@ -101,32 +100,31 @@ public class Mobile {
   }
 
   public static void main(String[] args) {
-    Mobile[] mobiles = new Mobile[4];
-    Scanner sc = new Scanner(System.in);
+    Mobile[] mobiles = {
+        new Mobile("Model X", "BrandA", 1000, true),
+        new Mobile("Model Y", "BrandA", 800, false),
+        new Mobile("Model Z", "BrandB", 1200, true),
+        new Mobile("Model W", "BrandC", 500, false),
+        new Mobile("Model V", "BrandA", 900, true)
+    };
 
-    for (int i = 0; i < mobiles.length; i++) {
-      String mobileName = sc.nextLine();
-      String brand = sc.nextLine();
-      int price = sc.nextInt();
-      boolean is5GEnabled = sc.nextBoolean();
+    // Test findAveragePriceByBrand
+    TestHelper.assertEqual("Average price for BrandA", findAveragePriceByBrand(mobiles, "BrandA"), 900);
+    TestHelper.assertEqual("Average price for BrandB", findAveragePriceByBrand(mobiles, "BrandB"), 1200);
+    TestHelper.assertEqual("Average price for BrandC", findAveragePriceByBrand(mobiles, "BrandC"), 500);
+    TestHelper.assertEqual("Average price for BrandD (non-existent)", findAveragePriceByBrand(mobiles, "BrandD"), 0);
 
-      sc.nextLine();
+    // Test getMostExpensive5GEnabledMobile
+    Mobile mostExpensive5G = getMostExpensive5GEnabledMobile(mobiles);
+    TestHelper.assertEqual("Most expensive 5G enabled mobile name", mostExpensive5G.getMobileName(), "Model Z");
+    TestHelper.assertEqual("Most expensive 5G enabled mobile brand", mostExpensive5G.getBrand(), "BrandB");
+    TestHelper.assertEqual("Most expensive 5G enabled mobile price", mostExpensive5G.getPrice(), 1200);
 
-      mobiles[i] = new Mobile(mobileName, brand, price, is5GEnabled);
-    }
-
-    String newBrand = sc.nextLine();
-    int avgPrice = findAveragePriceByBrand(mobiles, newBrand);
-
-    System.out.println(avgPrice);
-
-    Mobile mobile = getMostExpensive5GEnabledMobile(mobiles);
-    if (mobile != null) {
-      System.out.println(mobile.toString());
-    } else {
-      System.out.println("No mobile found");
-    }
-
-    sc.close();
+    Mobile[] no5GMobiles = {
+        new Mobile("Old Phone", "BrandX", 300, false),
+        new Mobile("Another Old Phone", "BrandY", 200, false)
+    };
+    TestHelper.assertEqual("Most expensive 5G enabled mobile (none)", getMostExpensive5GEnabledMobile(no5GMobiles),
+        null);
   }
 }

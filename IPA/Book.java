@@ -1,38 +1,39 @@
+// Scenario:
+// A library keeps track of Book objects having title, author, price, genre, and
+// rating.
 //
-// ### 🔷 **Problem 3 – Book Class with Sorting**
+// Tasks:
 //
-// Create a `Book` class with:
+// Create the Book class.
 //
-// * `bookName` (String)
-// * `author` (String)
-// * `price` (int)
+// Write getAverageRatingByGenre(String genre) that returns the average rating
+// for books of that genre.
 //
-// Write:
-//
-// 1. A method `getBooksSortedByPrice(Book[] books)` that returns an array of
-// books sorted by their price in ascending order.
-//
-
-import java.util.List;
-import java.util.Scanner;
+// Write getMostExpensiveBookByAuthor(String author) that returns the Book
+// object with the highest price for that author.
 
 public class Book {
-  private String bookName;
+
+  private String title;
   private String author;
   private int price;
+  private String genre;
+  private int rating;
 
-  public Book(String bookName, String author, int price) {
-    this.bookName = bookName;
+  public Book(String title, String author, int price, String genre, int rating) {
+    this.title = title;
     this.author = author;
     this.price = price;
+    this.genre = genre;
+    this.rating = rating;
   }
 
-  public String getBookName() {
-    return bookName;
+  public String getTitle() {
+    return title;
   }
 
-  public void setBookName(String bookName) {
-    this.bookName = bookName;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
   public String getAuthor() {
@@ -51,46 +52,76 @@ public class Book {
     this.price = price;
   }
 
-  @Override
-  public String toString() {
-    return "Book [bookName=" + bookName + ", author=" + author + ", price=" + price + "]";
+  public String getGenre() {
+    return genre;
   }
 
-  public static Book[] getBooksSortedByPrice(Book[] books) {
-    Book[] copiedBooks = books.clone();
-    for (int i = 0; i < copiedBooks.length - 1; i++) {
-      for (int j = 0; j < copiedBooks.length - i - 1; j++) {
-        if (copiedBooks[j].getPrice() > copiedBooks[j + 1].getPrice()) {
-          Book temp = copiedBooks[j];
-          copiedBooks[j] = copiedBooks[j + 1];
-          copiedBooks[j + 1] = temp;
+  public void setGenre(String genre) {
+    this.genre = genre;
+  }
+
+  public int getRating() {
+    return rating;
+  }
+
+  public void setRating(int rating) {
+    this.rating = rating;
+  }
+
+  @Override
+  public String toString() {
+    return "Library [title=" + title + ", author=" + author + ", price=" + price + ", genre=" + genre + ", rating="
+        + rating + "]";
+  }
+
+  public static int getAverageRatingByGenre(Book[] books, String genre) {
+    int totalRating = 0;
+    int ratingCount = 0;
+
+    for (Book book : books) {
+      if (book.getGenre().equals(genre)) {
+        totalRating += book.getRating();
+        ratingCount++;
+      }
+    }
+    return ratingCount == 0 ? 0 : (totalRating / ratingCount);
+  }
+
+  public static Book getMostExpensiveBookByAuthor(Book[] books, String author) {
+    Book expensiveBook = null;
+    for (Book book : books) {
+      if (book.getAuthor().equals(author)) {
+        if (expensiveBook == null || book.getPrice() > expensiveBook.getPrice()) {
+          expensiveBook = book;
         }
       }
     }
-    return copiedBooks;
+    return expensiveBook;
   }
 
   public static void main(String[] args) {
-    Book[] books = new Book[4];
-    Scanner sc = new Scanner(System.in);
+    Book[] books = {
+        new Book("The Great Gatsby", "F. Scott Fitzgerald", 10, "Fiction", 3),
+        new Book("To Kill a Mockingbird", "Harper Lee", 12, "Fiction", 5),
+        new Book("Pride and Prejudice", "Jane Austen", 15, "Fiction", 4),
+        new Book("The Catcher in the Rye", "J.D. Salinger", 13, "Fiction", 4),
+        new Book("1984", "George Orwell", 6, "Fiction", 4),
+        new Book("Animal Farm", "George Orwell", 20, "Fiction", 4),
+    };
 
-    for (int i = 0; i < books.length; i++) {
-      String bookName = sc.nextLine();
-      String author = sc.nextLine();
-      int price = sc.nextInt();
+    // Test getAverageRatingByGenre
+    TestHelper.assertEqual("Average rating for Fiction", getAverageRatingByGenre(books, "Fiction"), 4);
+    TestHelper.assertEqual("Average rating for Non-Fiction", getAverageRatingByGenre(books, "Non-Fiction"), 0);
 
-      sc.nextLine();
+    // Test getMostExpensiveBookByAuthor
+    Book mostExpensiveBook = getMostExpensiveBookByAuthor(books, "J.D. Salinger");
+    TestHelper.assertEqual("Most expensive book by author", mostExpensiveBook.getTitle(), "The Catcher in the Rye");
+    TestHelper.assertEqual("Most expensive book by author price", mostExpensiveBook.getPrice(), 13);
 
-      books[i] = new Book(bookName, author, price);
-    }
-
-    Book[] sortedBooks = getBooksSortedByPrice(books);
-    for (Book book : sortedBooks) {
-      System.out.println(book);
-    }
-
-    sc.close();
-
+    Book[] noBooks = {
+    };
+    TestHelper.assertEqual("Most expensive book by author (none)",
+        getMostExpensiveBookByAuthor(noBooks, "J.D. Salinger"),
+        null);
   }
-
 }

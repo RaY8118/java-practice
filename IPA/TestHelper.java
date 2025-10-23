@@ -41,4 +41,13 @@ public class TestHelper {
 
     }
   }
+
+  public static <T> void assertEqual(String testName, T actual, T expected) {
+    if ((actual == null && expected == null) ||
+        (actual != null && actual.equals(expected))) {
+      System.out.println("✅ " + testName + " passed (" + actual + ")");
+    } else {
+      System.out.println("❌ " + testName + " failed — expected " + expected + ", got " + actual);
+    }
+  }
 }
