@@ -2,7 +2,7 @@
 //
 // Read a string and print words with length greater than 5 characters. If no such words exist, print “No words with length > 5 found”.
 //
-package com.ray8118.ipa;
+package com.ray8118.ipa.dsa;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

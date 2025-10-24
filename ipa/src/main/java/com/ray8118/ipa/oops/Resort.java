@@ -23,7 +23,7 @@
 // is, if the returned value is greater than 0 otherwise it should print "There
 // are no such available resort"
 
-package com.ray8118.ipa;
+package com.ray8118.ipa.oops;
 
 import java.util.Scanner;
 

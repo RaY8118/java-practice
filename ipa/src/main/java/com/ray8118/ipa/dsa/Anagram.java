@@ -8,9 +8,11 @@
 // comparison should be case-insensitive and ignore non-alphabetic characters.
 //
 // Return `true` if they are anagrams, `false` otherwise.
-package com.ray8118.ipa;
+package com.ray8118.ipa.dsa;
 
 import java.util.Arrays;
+
+import com.ray8118.ipa.TestHelper;
 
 public class Anagram {
 

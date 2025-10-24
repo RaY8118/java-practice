@@ -2,7 +2,7 @@
 // present in the input String value. If no lower case characters are present in the String value
 // then it should print "No lower case characters present" as a String.
 
-package com.ray8118.ipa;
+package com.ray8118.ipa.dsa;
 
 import java.util.Scanner;
 

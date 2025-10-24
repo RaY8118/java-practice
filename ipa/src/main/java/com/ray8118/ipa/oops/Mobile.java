@@ -14,7 +14,9 @@
 // 3. A method `countMobilesByBrand(Mobile[] mobiles, String brand)` to return the number of mobiles for a given brand. If no mobiles with the brand exist, return 0.
 //
 
-package com.ray8118.ipa;
+package com.ray8118.ipa.oops;
+
+import com.ray8118.ipa.TestHelper;
 
 public class Mobile {
 

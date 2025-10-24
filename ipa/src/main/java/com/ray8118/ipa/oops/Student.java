@@ -9,7 +9,9 @@
 //
 // Write another method getTopper() that returns the Student object with the highest marks overall.
 
-package com.ray8118.ipa;
+package com.ray8118.ipa.oops;
+
+import com.ray8118.ipa.TestHelper;
 
 public class Student {
 

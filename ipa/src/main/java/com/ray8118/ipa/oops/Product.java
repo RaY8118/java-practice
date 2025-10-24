@@ -14,10 +14,12 @@
 // 2. A method `calculateTotalInventoryValue(Product[] products)` to return the total monetary value of all products in the inventory (sum of price * stockQuantity for all products).
 // 3. A method `getLowStockProducts(Product[] products, int threshold)` to return an array of `Product` objects whose `stockQuantity` is below the given `threshold`. Return an empty array if no such products are found.
 
-package com.ray8118.ipa;
+package com.ray8118.ipa.oops;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.ray8118.ipa.TestHelper;
 
 public class Product {
 

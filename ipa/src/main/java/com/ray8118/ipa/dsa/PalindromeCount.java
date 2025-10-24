@@ -4,9 +4,11 @@
 // Read a sentence (string). Find and print the number of words in it that are palindromes (same forwards and backwards). If no palindromic words are found, print “No Palindrome Found”.
 //
 
-package com.ray8118.ipa;
+package com.ray8118.ipa.dsa;
 
 import java.util.Scanner;
+
+import com.ray8118.ipa.TestHelper;
 
 public class PalindromeCount {
 

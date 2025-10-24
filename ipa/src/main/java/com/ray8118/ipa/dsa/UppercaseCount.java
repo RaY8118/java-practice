@@ -2,9 +2,11 @@
 //
 // Write a program that reads a string and counts number of uppercase characters. If none are found, print “No uppercase characters present”.
 //
-package com.ray8118.ipa;
+package com.ray8118.ipa.dsa;
 
 import java.util.Scanner;
+
+import com.ray8118.ipa.TestHelper;
 
 public class UppercaseCount {
 
