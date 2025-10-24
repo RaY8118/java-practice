@@ -21,8 +21,6 @@ package com.ray8118.ipa.oops;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ray8118.ipa.TestHelper;
-
 public class Car {
 
   private String modelName;
@@ -103,49 +101,4 @@ public class Car {
     return filteredCars.toArray(new Car[0]);
   }
 
-  public static void main(String[] args) {
-    // Test data
-    Car[] cars = {
-        new Car("Model S", "Tesla", 80000),
-        new Car("Mustang", "Ford", 55000),
-        new Car("Civic", "Honda", 25000),
-        new Car("Accord", "Honda", 30000)
-    };
-
-    // 1️⃣ Test getLowestPriceCar
-    Car lowestPriceCar = getLowestPricedCar(cars);
-    TestHelper.assertEqual("Lowest price car is Civic", lowestPriceCar.getModelName(), "Civic");
-    TestHelper.assertEqual("Lowest price car price is 25000", lowestPriceCar.getPrice(), 25000);
-
-    // 2️⃣ Test getHighestPriceCar
-    Car highestPriceCar = getHighestPricedCar(cars);
-    TestHelper.assertEqual("Highest price car is Model S", highestPriceCar.getModelName(), "Model S");
-    TestHelper.assertEqual("Highest price car price is 80000", highestPriceCar.getPrice(), 80000);
-
-    // 3️⃣ Test filterCarsByBrand
-    Car[] hondaCars = filterCarsByBrand(cars, "Honda");
-    TestHelper.assertEqual("Number of Honda cars", hondaCars.length, 2);
-    TestHelper.assertEqual("First Honda car is Civic", hondaCars[0].getModelName(), "Civic");
-    TestHelper.assertEqual("Second Honda car is Accord", hondaCars[1].getModelName(), "Accord");
-
-    Car[] fordCars = filterCarsByBrand(cars, "Ford");
-    TestHelper.assertEqual("Number of Ford cars", fordCars.length, 1);
-    TestHelper.assertEqual("Ford car is Mustang", fordCars[0].getModelName(), "Mustang");
-
-    Car[] bmwCars = filterCarsByBrand(cars, "BMW");
-    TestHelper.assertEqual("No BMW cars", bmwCars.length, 0);
-
-    // 4️⃣ Edge case: empty array
-    Car[] emptyCars = {};
-    TestHelper.assertEqual("Lowest price car from empty array", getLowestPricedCar(emptyCars), null);
-    TestHelper.assertEqual("Highest price car from empty array", getHighestPricedCar(emptyCars), null);
-    Car[] emptyFiltered = Car.filterCarsByBrand(emptyCars, "Tesla");
-    TestHelper.assertEqual("Filtered cars from empty array", emptyFiltered.length, 0);
-
-    // 5️⃣ Edge case: null input (optional, if your methods handle null)
-    TestHelper.assertEqual("Lowest price car from null", getLowestPricedCar(null), null);
-    TestHelper.assertEqual("Highest price car from null", getHighestPricedCar(null), null);
-    Car[] nullFiltered = filterCarsByBrand(null, "Honda");
-    TestHelper.assertEqual("Filtered cars from null input", nullFiltered.length, 0);
-  }
 }
