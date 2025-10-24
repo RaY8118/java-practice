@@ -12,6 +12,7 @@
 // Write getHighestBalanceAccount() that returns the BankAccount object with the
 // maximum balance.
 //
+package com.ray8118.ipa;
 
 public class BankAccount {
 

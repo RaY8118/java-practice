@@ -16,10 +16,10 @@
 // Return an array of updated Employee objects.
 // 2. A method `getEmployeesByExperience(Employee[] employees, int minExperience)` that returns an array of employees with experience greater than or equal to `minExperience`. Return an empty array if no such employees are found.
 
+package com.ray8118.ipa;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Employee {
   private String empName;

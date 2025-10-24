@@ -23,6 +23,8 @@
 // is, if the returned value is greater than 0 otherwise it should print "There
 // are no such available resort"
 
+package com.ray8118.ipa;
+
 import java.util.Scanner;
 
 /**
@@ -123,5 +125,6 @@ public class Resort {
     } else {
       System.out.println("There is no such availlable resort");
     }
+    sc.close();
   }
 }

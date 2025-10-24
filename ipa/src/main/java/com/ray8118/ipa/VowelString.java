@@ -2,8 +2,8 @@
 // 
 //  vowel in the string. If no words
 // are present in the String value then it should print "No String found".
+package com.ray8118.ipa;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class VowelString {

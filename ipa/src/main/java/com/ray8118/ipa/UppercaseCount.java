@@ -2,12 +2,8 @@
 //
 // Write a program that reads a string and counts number of uppercase characters. If none are found, print “No uppercase characters present”.
 //
+package com.ray8118.ipa;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.FileDescriptor;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 import java.util.Scanner;
 
 public class UppercaseCount {
@@ -28,6 +24,8 @@ public class UppercaseCount {
     } else {
       System.out.println("No uppercase characters found");
     }
+
+    sc.close();
   }
 
   static {

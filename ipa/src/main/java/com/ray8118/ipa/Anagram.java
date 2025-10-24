@@ -1,3 +1,4 @@
+
 //
 // ### 🔷 **Problem 10 – String Anagram Checker**
 //
@@ -7,6 +8,7 @@
 // comparison should be case-insensitive and ignore non-alphabetic characters.
 //
 // Return `true` if they are anagrams, `false` otherwise.
+package com.ray8118.ipa;
 
 import java.util.Arrays;
 

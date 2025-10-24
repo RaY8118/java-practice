@@ -8,6 +8,9 @@
 // Write a method getAverageMarksByDepartment(String dept) that returns the average marks of all students in that department.
 //
 // Write another method getTopper() that returns the Student object with the highest marks overall.
+
+package com.ray8118.ipa;
+
 public class Student {
 
   private String name;

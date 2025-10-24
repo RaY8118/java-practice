@@ -1,3 +1,5 @@
+package com.ray8118.ipa;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileDescriptor;

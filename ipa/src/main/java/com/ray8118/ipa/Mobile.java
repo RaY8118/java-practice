@@ -13,7 +13,8 @@
 // 2. A method `getMostExpensive5GEnabledMobile(Mobile[] mobiles)` to return the `Mobile` object with highest price among 5G-enabled mobiles. Return null if none found.
 // 3. A method `countMobilesByBrand(Mobile[] mobiles, String brand)` to return the number of mobiles for a given brand. If no mobiles with the brand exist, return 0.
 //
-// import java.util.Scanner;
+
+package com.ray8118.ipa;
 
 public class Mobile {
 
