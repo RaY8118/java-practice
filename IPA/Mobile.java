@@ -1,23 +1,20 @@
-// 🔷 Problem 1 – Mobile Class and Price Calculation
+// ### 🔷 **Problem 1 – Mobile Class and Price Calculation**
 //
-// Create a class Mobile with:
-//     mobileName (String)
-//     brand (String)
-//     price (int)
-//     is5GEnabled (boolean)
+// Create a class `Mobile` with:
+//
+// * `mobileName` (String)
+// * `brand` (String)
+// * `price` (int)
+// * `is5GEnabled` (boolean)
 //
 // Write:
-//     A method findAveragePriceByBrand(Mobile[] mobiles, String brand) to return average price of mobiles from the given brand.
-//     If no mobiles with the brand exist, return 0.
-//     A method getMostExpensive5GEnabledMobile(Mobile[] mobiles) to return the Mobile object with highest price among 5G-enabled mobiles.
-//     Return null if none found.
 //
+// 1. A method `findAveragePriceByBrand(Mobile[] mobiles, String brand)` to return average price of mobiles from the given brand. If no mobiles with the brand exist, return 0.
+// 2. A method `getMostExpensive5GEnabledMobile(Mobile[] mobiles)` to return the `Mobile` object with highest price among 5G-enabled mobiles. Return null if none found.
+// 3. A method `countMobilesByBrand(Mobile[] mobiles, String brand)` to return the number of mobiles for a given brand. If no mobiles with the brand exist, return 0.
+//
+// import java.util.Scanner;
 
-import java.util.Scanner;
-
-/**
- * Mobile
- */
 public class Mobile {
 
   private String mobileName;
@@ -94,6 +91,16 @@ public class Mobile {
     return mostExpensive;
   }
 
+  public static int countMobilesByBrand(Mobile[] mobiles, String brand) {
+    int count = 0;
+    for (Mobile mobile : mobiles) {
+      if (mobile.getBrand().equals(brand)) {
+        count++;
+      }
+    }
+    return count;
+  }
+
   @Override
   public String toString() {
     return "Mobile Name: " + mobileName + "\nBrand: " + brand + "\nPrice: " + price + "\n5G Enabled: " + is5GEnabled;
@@ -120,11 +127,19 @@ public class Mobile {
     TestHelper.assertEqual("Most expensive 5G enabled mobile brand", mostExpensive5G.getBrand(), "BrandB");
     TestHelper.assertEqual("Most expensive 5G enabled mobile price", mostExpensive5G.getPrice(), 1200);
 
+    // Test countMobilesByBrand
+    TestHelper.assertEqual("Count of mobiles for BrandA", countMobilesByBrand(mobiles, "BrandA"), 3);
+    TestHelper.assertEqual("Count of mobiles for BrandB", countMobilesByBrand(mobiles, "BrandB"), 1);
+    TestHelper.assertEqual("Count of mobiles for BrandC", countMobilesByBrand(mobiles, "BrandC"), 1);
+    TestHelper.assertEqual("Count of mobiles for BrandD (non-existent)", countMobilesByBrand(mobiles, "BrandD"), 0);
+
     Mobile[] no5GMobiles = {
         new Mobile("Old Phone", "BrandX", 300, false),
         new Mobile("Another Old Phone", "BrandY", 200, false)
     };
-    TestHelper.assertEqual("Most expensive 5G enabled mobile (none)", getMostExpensive5GEnabledMobile(no5GMobiles),
+    TestHelper.assertEqual("Most expensive 5G enabled mobile (none)",
+
+        getMostExpensive5GEnabledMobile(no5GMobiles),
         null);
   }
 }
