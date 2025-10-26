@@ -11,6 +11,18 @@ import java.util.Scanner;
  */
 public class LowerString {
 
+  public static int countLowercase(String s) {
+    if (s == null) return 0;
+    int count = 0;
+    for (int i = 0; i < s.length(); i++) {
+      char ch = s.charAt(i);
+      if (ch >= 'a' && ch <= 'z') {
+        count++;
+      }
+    }
+    return count;
+  }
+
   public static void main(String[] args) {
     int count = 0;
     Scanner sc = new Scanner(System.in);

@@ -128,7 +128,7 @@ public class HeadSets {
     }
 
     availableSets.sort(Comparator.comparingInt(HeadSets::getPrice));
-    return availableSets.get(1);
+    return availableSets.size() >= 2 ? availableSets.get(1) : null;
 
   }
 

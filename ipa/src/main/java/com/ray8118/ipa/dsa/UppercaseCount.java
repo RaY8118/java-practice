@@ -10,6 +10,17 @@ import com.ray8118.ipa.TestHelper;
 
 public class UppercaseCount {
 
+  public static int countUppercase(String sentence) {
+    if (sentence == null) return 0;
+    int count = 0;
+    for (Character ch : sentence.toCharArray()) {
+      if (Character.isUpperCase(ch)) {
+        count++;
+      }
+    }
+    return count;
+  }
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String sentence = sc.nextLine();
@@ -30,15 +41,6 @@ public class UppercaseCount {
     sc.close();
   }
 
-  static {
-    String[][] tests = {
-        { "I love programming in Java", "The uppercase characters count is: 2" },
-        { "shot words only", "No uppercase characters found" },
-        { "Artifical Intelligence is Amazing", "The uppercase characters count is: 3" },
-    };
 
-    TestHelper.runTests(UppercaseCount::main, tests);
-    System.exit(0);
-  }
 
 }

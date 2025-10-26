@@ -40,13 +40,17 @@ public class PalindromeCount {
     return true;
   }
 
-  static {
-    String[][] tests = {
-        { "HeeH", "Palindrome count: 1" },
-        { "Hello World", "No Palindrome found" }
-    };
-
-    TestHelper.runTests(PalindromeCount::main, tests);
-    System.exit(0);
+  public static int countPalindromes(String sentence) {
+    if (sentence == null || sentence.trim().isEmpty()) return 0;
+    String[] words = sentence.toLowerCase().split("\\s+");
+    int count = 0;
+    for (String word : words) {
+      if (isPalindrome(word)) {
+        count++;
+      }
+    }
+    return count;
   }
+
+
 }

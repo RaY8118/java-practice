@@ -78,6 +78,17 @@ public class Student {
     return deptStudents == 0 ? 0 : (totalMarks / deptStudents);
   }
 
+  public static Student getTopper(Student[] students) {
+    if (students == null || students.length == 0) return null;
+    Student topper = students[0];
+    for (Student student : students) {
+      if (student.getMarks() > topper.getMarks()) {
+        topper = student;
+      }
+    }
+    return topper;
+  }
+
   public static void main(String[] args) {
     Student[] students = {
         new Student("Alice", 1, 90, "CS"),
