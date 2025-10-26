@@ -12,12 +12,7 @@ public class VowelString {
     System.out.print("Enter a string: ");
     Scanner sc = new Scanner(System.in);
     String str = sc.nextLine();
-    int count = 0;
-    for (char ch : str.toCharArray()) {
-      if ("aeiou".indexOf(Character.toLowerCase(ch)) != -1) {
-        count++;
-      }
-    }
+    int count = countVowels(str);
 
     if (count == 0) {
       System.out.println("No string found");
@@ -25,5 +20,18 @@ public class VowelString {
       System.out.println(count);
     }
     sc.close();
+  }
+
+  public static int countVowels(String str) {
+    if (str == null) {
+      return 0;
+    }
+    int count = 0;
+    for (char ch : str.toCharArray()) {
+      if ("aeiou".indexOf(Character.toLowerCase(ch)) != -1) {
+        count++;
+      }
+    }
+    return count;
   }
 }

@@ -1,0 +1,106 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Anagram",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.Anagram",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "HeadSets",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.HeadSets",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "LowerString",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.LowerString",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "PalindromeCount",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.PalindromeCount",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "UppercaseCount",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.UppercaseCount",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "VowelString",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.VowelString",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "WordLength",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.WordLength",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "BankAccount",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.oops.BankAccount",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "Employee",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.oops.Employee",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "Mobile",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.oops.Mobile",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "Product",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.oops.Product",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "Resort",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.oops.Resort",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "Student",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.oops.Student",
+            "projectName": "ipa"
+        }
+    ]
+}
