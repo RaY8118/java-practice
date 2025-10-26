@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SubtringCount",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.SubtringCount",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
+            "name": "Calculate",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.Calculate",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
             "name": "StringDigitCounter",
             "request": "launch",
             "mainClass": "com.ray8118.ipa.dsa.StringDigitCounter",
