@@ -12,8 +12,6 @@ package com.ray8118.ipa.dsa;
 
 import java.util.Arrays;
 
-import com.ray8118.ipa.TestHelper;
-
 public class Anagram {
 
   public static boolean isAnagram(String s1, String s2) {
@@ -38,18 +36,5 @@ public class Anagram {
   }
 
   public static void main(String[] args) {
-
-    System.out.println("--- Testing isAnagram ---");
-    TestHelper.assertEqual("isAnagram - Basic Anagram", true, Anagram.isAnagram("listen", "silent"));
-    TestHelper.assertEqual("isAnagram - Different Case", true, Anagram.isAnagram("Listen", "Silent"));
-    TestHelper.assertEqual("isAnagram - With Spaces", true, Anagram.isAnagram("A gentleman", "Elegant man"));
-    TestHelper.assertEqual("isAnagram - With Punctuation", true, Anagram.isAnagram("Debit card", "Bad credit"));
-    TestHelper.assertEqual("isAnagram - Not Anagrams", false, Anagram.isAnagram("hello", "world"));
-    TestHelper.assertEqual("isAnagram - Different Length", false, Anagram.isAnagram("abc", "abcd"));
-    TestHelper.assertEqual("isAnagram - Empty Strings", true, Anagram.isAnagram("", ""));
-    TestHelper.assertEqual("isAnagram - One Empty String", false, Anagram.isAnagram("a", ""));
-    TestHelper.assertEqual("isAnagram - Null Strings", false, Anagram.isAnagram(null, "abc"));
-    TestHelper.assertEqual("isAnagram - Null Strings 2", false, Anagram.isAnagram("abc", null));
-    TestHelper.assertEqual("isAnagram - Null Strings 3", false, Anagram.isAnagram(null, null));
   }
 }

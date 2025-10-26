@@ -16,8 +16,6 @@
 
 package com.ray8118.ipa.oops;
 
-import com.ray8118.ipa.TestHelper;
-
 public class Mobile {
 
   private String mobileName;
@@ -110,39 +108,6 @@ public class Mobile {
   }
 
   public static void main(String[] args) {
-    Mobile[] mobiles = {
-        new Mobile("Model X", "BrandA", 1000, true),
-        new Mobile("Model Y", "BrandA", 800, false),
-        new Mobile("Model Z", "BrandB", 1200, true),
-        new Mobile("Model W", "BrandC", 500, false),
-        new Mobile("Model V", "BrandA", 900, true)
-    };
 
-    // Test findAveragePriceByBrand
-    TestHelper.assertEqual("Average price for BrandA", findAveragePriceByBrand(mobiles, "BrandA"), 900);
-    TestHelper.assertEqual("Average price for BrandB", findAveragePriceByBrand(mobiles, "BrandB"), 1200);
-    TestHelper.assertEqual("Average price for BrandC", findAveragePriceByBrand(mobiles, "BrandC"), 500);
-    TestHelper.assertEqual("Average price for BrandD (non-existent)", findAveragePriceByBrand(mobiles, "BrandD"), 0);
-
-    // Test getMostExpensive5GEnabledMobile
-    Mobile mostExpensive5G = getMostExpensive5GEnabledMobile(mobiles);
-    TestHelper.assertEqual("Most expensive 5G enabled mobile name", mostExpensive5G.getMobileName(), "Model Z");
-    TestHelper.assertEqual("Most expensive 5G enabled mobile brand", mostExpensive5G.getBrand(), "BrandB");
-    TestHelper.assertEqual("Most expensive 5G enabled mobile price", mostExpensive5G.getPrice(), 1200);
-
-    // Test countMobilesByBrand
-    TestHelper.assertEqual("Count of mobiles for BrandA", countMobilesByBrand(mobiles, "BrandA"), 3);
-    TestHelper.assertEqual("Count of mobiles for BrandB", countMobilesByBrand(mobiles, "BrandB"), 1);
-    TestHelper.assertEqual("Count of mobiles for BrandC", countMobilesByBrand(mobiles, "BrandC"), 1);
-    TestHelper.assertEqual("Count of mobiles for BrandD (non-existent)", countMobilesByBrand(mobiles, "BrandD"), 0);
-
-    Mobile[] no5GMobiles = {
-        new Mobile("Old Phone", "BrandX", 300, false),
-        new Mobile("Another Old Phone", "BrandY", 200, false)
-    };
-    TestHelper.assertEqual("Most expensive 5G enabled mobile (none)",
-
-        getMostExpensive5GEnabledMobile(no5GMobiles),
-        null);
   }
 }

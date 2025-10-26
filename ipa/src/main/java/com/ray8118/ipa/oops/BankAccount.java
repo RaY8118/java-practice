@@ -14,8 +14,6 @@
 //
 package com.ray8118.ipa.oops;
 
-import com.ray8118.ipa.TestHelper;
-
 public class BankAccount {
 
   private int accountNumber;
@@ -93,25 +91,6 @@ public class BankAccount {
   }
 
   public static void main(String[] args) {
-    BankAccount[] accounts = {
-        new BankAccount(1, "John", 1000, AccountType.SAVINGS),
-        new BankAccount(2, "Jane", 2000, AccountType.CURRENT),
-        new BankAccount(3, "Bob", 3000, AccountType.SAVINGS),
-        new BankAccount(4, "Alice", 4000, AccountType.CURRENT)
-    };
-
-    // Test getTotalBalanceByType
-    TestHelper.assertEqual("Total balance for SAVINGS", getTotalBalanceByType(accounts, AccountType.SAVINGS), 4000);
-    TestHelper.assertEqual("Total balance for CURRENT", getTotalBalanceByType(accounts, AccountType.CURRENT), 6000);
-
-    // Test getHighestBalanceAccount
-    BankAccount highestBalanceAccount = getHighestBalanceAccount(accounts);
-    TestHelper.assertEqual("Highest balance account name", highestBalanceAccount.getHolderName(), "Alice");
-    TestHelper.assertEqual("Highest balance account balance", highestBalanceAccount.getBalance(), 4000);
-
-    BankAccount[] noAccounts = {
-    };
-    TestHelper.assertEqual("Highest balance account (none)", getHighestBalanceAccount(noAccounts), null);
 
   }
 }

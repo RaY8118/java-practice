@@ -8,16 +8,14 @@ package com.ray8118.ipa.dsa;
 
 import java.util.Scanner;
 
-import com.ray8118.ipa.TestHelper;
-
 public class PalindromeCount {
 
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    String sentence = sc.nextLine();
-    String[] words = sentence.toLowerCase().split(" ");
+  public static void main(final String[] args) {
+    final Scanner sc = new Scanner(System.in);
+    final String sentence = sc.nextLine();
+    final String[] words = sentence.toLowerCase().split(" ");
     int count = 0;
-    for (String word : words) {
+    for (final String word : words) {
       if (isPalindrome(word)) {
         count++;
       }
@@ -31,7 +29,7 @@ public class PalindromeCount {
     sc.close();
   }
 
-  public static boolean isPalindrome(String word) {
+  public static boolean isPalindrome(final String word) {
     for (int i = 0; i < word.length(); i++) {
       if (word.charAt(i) != word.charAt(word.length() - 1 - i)) {
         return false;
@@ -40,17 +38,17 @@ public class PalindromeCount {
     return true;
   }
 
-  public static int countPalindromes(String sentence) {
-    if (sentence == null || sentence.trim().isEmpty()) return 0;
-    String[] words = sentence.toLowerCase().split("\\s+");
+  public static int countPalindromes(final String sentence) {
+    if (sentence == null || sentence.trim().isEmpty())
+      return 0;
+    final String[] words = sentence.toLowerCase().split("\\s+");
     int count = 0;
-    for (String word : words) {
+    for (final String word : words) {
       if (isPalindrome(word)) {
         count++;
       }
     }
     return count;
   }
-
 
 }

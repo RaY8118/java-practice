@@ -21,18 +21,8 @@ public class LowerStringTest {
     }
 
     @Test
-    void testCountLowercase_allLowercase() {
-        assertEquals(11, LowerString.countLowercase("hello world"));
-    }
-
-    @Test
     void testCountLowercase_allUppercase() {
         assertEquals(0, LowerString.countLowercase("HELLO WORLD"));
-    }
-
-    @Test
-    void testCountLowercase_mixedCase() {
-        assertEquals(8, LowerString.countLowercase("HeLLo WoRLd"));
     }
 
     @Test

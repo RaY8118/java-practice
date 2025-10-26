@@ -21,8 +21,6 @@ package com.ray8118.ipa.oops;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ray8118.ipa.TestHelper;
-
 public class Employee {
   private String empName;
   private int salary;
@@ -100,43 +98,6 @@ public class Employee {
   }
 
   public static void main(String[] args) {
-    Employee[] employees = {
-        new Employee("Alice", 50000, 6),
-        new Employee("Bob", 40000, 2),
-        new Employee("Charlie", 60000, 8)
-    };
 
-    // 1️⃣ Test calculateBonus
-    Employee[] updatedEmployees = Employee.calculateBonus(employees);
-
-    TestHelper.assertEqual("Alice salary after 20% bonus", updatedEmployees[0].getSalary(), 60000);
-    TestHelper.assertEqual("Bob salary after 10% bonus", updatedEmployees[1].getSalary(), 44000);
-    TestHelper.assertEqual("Charlie salary after 20% bonus", updatedEmployees[2].getSalary(), 72000);
-
-    // 2️⃣ Test getEmployeesByExperience
-    Employee[] experiencedEmployees = Employee.getEmployeesByExperience(updatedEmployees, 5);
-
-    TestHelper.assertEqual("Number of experienced employees >=5 years", experiencedEmployees.length, 2);
-    TestHelper.assertEqual("First experienced employee is Alice", experiencedEmployees[0].getEmpName(), "Alice");
-    TestHelper.assertEqual("Second experienced employee is Charlie", experiencedEmployees[1].getEmpName(), "Charlie");
-
-    // 3️⃣ Edge case: empty array
-    Employee[] emptyArray = {};
-    Employee[] resultEmpty = Employee.calculateBonus(emptyArray);
-    TestHelper.assertEqual("Empty array returns empty after calculateBonus", resultEmpty.length, 0);
-
-    Employee[] resultNoExperience = Employee.getEmployeesByExperience(updatedEmployees, 20);
-    TestHelper.assertEqual("No employee has >=20 years experience", resultNoExperience.length, 0);
-
-    // 4️⃣ Additional test: all employees <=5 years
-    Employee[] juniorEmployees = {
-        new Employee("Dave", 30000, 1),
-        new Employee("Eve", 35000, 3)
-    };
-    Employee.calculateBonus(juniorEmployees);
-    for (Employee emp : juniorEmployees) {
-      TestHelper.assertEqual(emp.getEmpName() + " salary after 10% bonus", emp.getSalary(),
-          (int) (emp.getSalary() / 1.10 * 1.10));
-    }
   }
 }

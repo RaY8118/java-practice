@@ -4,7 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-    
+        {
+            "type": "java",
+            "name": "StringDigitCounter",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.StringDigitCounter",
+            "projectName": "ipa"
+        },
         {
             "type": "java",
             "name": "Current File",

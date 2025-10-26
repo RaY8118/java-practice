@@ -6,12 +6,11 @@ package com.ray8118.ipa.dsa;
 
 import java.util.Scanner;
 
-import com.ray8118.ipa.TestHelper;
-
 public class UppercaseCount {
 
   public static int countUppercase(String sentence) {
-    if (sentence == null) return 0;
+    if (sentence == null)
+      return 0;
     int count = 0;
     for (Character ch : sentence.toCharArray()) {
       if (Character.isUpperCase(ch)) {
@@ -40,7 +39,5 @@ public class UppercaseCount {
 
     sc.close();
   }
-
-
 
 }

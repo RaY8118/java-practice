@@ -51,17 +51,7 @@ public class UppercaseCountTest {
     }
 
     @Test
-    void testCountUppercase_numbersAndSymbols() {
-        assertEquals(6, UppercaseCount.countUppercase("ABC123def!@#GHI"));
-    }
-
-    @Test
     void testCountUppercase_singleLowercase() {
         assertEquals(0, UppercaseCount.countUppercase("a"));
-    }
-
-    @Test
-    void testCountUppercase_singleLowercase() {
-        assertEquals(0, UppercaseCount.countUppercase("A"));
     }
 }

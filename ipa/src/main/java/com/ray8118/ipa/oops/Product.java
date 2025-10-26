@@ -19,8 +19,6 @@ package com.ray8118.ipa.oops;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ray8118.ipa.TestHelper;
-
 public class Product {
 
   private String productId;
@@ -112,57 +110,6 @@ public class Product {
   }
 
   public static void main(String[] args) {
-    // Sample Product data
-    Product[] products = {
-        new Product("P001", "Laptop", "Electronics", 1200.00, 10),
-        new Product("P002", "Mouse", "Electronics", 25.00, 50),
-        new Product("P003", "Keyboard", "Electronics", 75.00, 20),
-        new Product("P004", "Desk Chair", "Furniture", 150.00, 5),
-        new Product("P005", "Monitor", "Electronics", 300.00, 15),
-        new Product("P006", "Table", "Furniture", 200.00, 8),
-        new Product("P007", "Webcam", "Electronics", 50.00, 0) // Zero stock
-    };
-
-    // Test findProductsByCategory
-    System.out.println("--- Testing findProductsByCategory ---");
-    Product[] electronicsProducts = Product.findProductsByCategory(products, "Electronics");
-    TestHelper.assertEqual("findProductsByCategory - Electronics", 5, electronicsProducts.length);
-
-    Product[] furnitureProducts = Product.findProductsByCategory(products, "Furniture");
-    TestHelper.assertEqual("findProductsByCategory - Furniture", 2, furnitureProducts.length);
-
-    Product[] nonExistentCategory = Product.findProductsByCategory(products, "Books");
-    TestHelper.assertEqual("findProductsByCategory - Non-existent", 0, nonExistentCategory.length);
-
-    Product[] emptyProducts = {};
-    Product[] resultFromEmpty = Product.findProductsByCategory(emptyProducts, "Electronics");
-    TestHelper.assertEqual("findProductsByCategory - Empty array", 0, resultFromEmpty.length);
-
-    // Test calculateTotalInventoryValue
-    System.out.println("\n--- Testing calculateTotalInventoryValue ---");
-    double totalValue = Product.calculateTotalInventoryValue(products);
-    // (1200*10) + (25*50) + (75*20) + (150*5) + (300*15) + (200*8) + (50*0)
-    // 12000 + 1250 + 1500 + 750 + 4500 + 1600 + 0 = 21600
-    TestHelper.assertEqual("calculateTotalInventoryValue - All products", 21600.00, totalValue);
-
-    double emptyValue = Product.calculateTotalInventoryValue(emptyProducts);
-    TestHelper.assertEqual("calculateTotalInventoryValue - Empty array", 0.00, emptyValue);
-
-    // Test getLowStockProducts
-    System.out.println("\n--- Testing getLowStockProducts ---");
-    Product[] lowStockThreshold10 = Product.getLowStockProducts(products, 10);
-    // Mouse (50), Desk Chair (5), Table (8), Webcam (0)
-    TestHelper.assertEqual("getLowStockProducts - Threshold 10", 4, lowStockThreshold10.length);
-
-    Product[] lowStockThreshold5 = Product.getLowStockProducts(products, 5);
-    // Desk Chair (5), Webcam (0)
-    TestHelper.assertEqual("getLowStockProducts - Threshold 5", 2, lowStockThreshold5.length);
-
-    Product[] noLowStock = Product.getLowStockProducts(products, 0);
-    TestHelper.assertEqual("getLowStockProducts - Threshold 0", 1, noLowStock.length);
-
-    Product[] lowStockEmpty = Product.getLowStockProducts(emptyProducts, 10);
-    TestHelper.assertEqual("getLowStockProducts - Empty array", 0, lowStockEmpty.length);
 
   }
 }

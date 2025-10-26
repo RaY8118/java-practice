@@ -11,8 +11,6 @@
 
 package com.ray8118.ipa.oops;
 
-import com.ray8118.ipa.TestHelper;
-
 public class Student {
 
   private String name;
@@ -79,7 +77,8 @@ public class Student {
   }
 
   public static Student getTopper(Student[] students) {
-    if (students == null || students.length == 0) return null;
+    if (students == null || students.length == 0)
+      return null;
     Student topper = students[0];
     for (Student student : students) {
       if (student.getMarks() > topper.getMarks()) {
@@ -90,38 +89,6 @@ public class Student {
   }
 
   public static void main(String[] args) {
-    Student[] students = {
-        new Student("Alice", 1, 90, "CS"),
-        new Student("Bob", 2, 80, "CS"),
-        new Student("Charlie", 3, 70, "IT"),
-        new Student("Diana", 4, 85, "CS")
-    };
 
-    TestHelper.assertEqual("CS average", getAverageMarksByDepartment(students, "CS"), 85);
-    TestHelper.assertEqual("IT average", getAverageMarksByDepartment(students, "IT"), 70);
-    TestHelper.assertEqual("ECE average (none)", getAverageMarksByDepartment(students, "ECE"), 0);
-    // runTests();
-  }
-
-  public static void runTests() {
-    Student[] students = {
-        new Student("Alice", 1, 90, "CS"),
-        new Student("Bob", 1, 80, "CS"),
-        new Student("Charlie", 3, 70, "IT"),
-        new Student("Diana", 4, 85, "CS")
-    };
-
-    test("CS average", getAverageMarksByDepartment(students, "CS"), 85);
-    test("IT average", getAverageMarksByDepartment(students, "IT"), 70);
-    test("ECE average (no students)", getAverageMarksByDepartment(students, "ECE"), 0);
-
-  }
-
-  public static void test(String testName, int actual, int expected) {
-    if (actual == expected) {
-      System.out.println("✅ " + testName + " passed (" + actual + ")");
-    } else {
-      System.out.println("❌ " + testName + " failed — expected " + expected + ", got " + actual);
-    }
   }
 }
