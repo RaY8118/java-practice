@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WordReversal",
+            "request": "launch",
+            "mainClass": "com.ray8118.ipa.dsa.WordReversal",
+            "projectName": "ipa"
+        },
+        {
+            "type": "java",
             "name": "SubtringCount",
             "request": "launch",
             "mainClass": "com.ray8118.ipa.dsa.SubtringCount",

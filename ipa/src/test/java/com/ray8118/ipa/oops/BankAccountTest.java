@@ -85,4 +85,72 @@ public class BankAccountTest {
         // Should return the first one encountered
         assertEquals("John", highest.getHolderName());
     }
+
+    @Test
+    void testDeposit_existingAccount() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS),
+            new BankAccount(2, "Jane", 2000, BankAccount.AccountType.CURRENT)
+        };
+        BankAccount.deposit(accounts, 1, 500);
+        assertEquals(1500, accounts[0].getBalance());
+        assertEquals(2000, accounts[1].getBalance());
+    }
+
+    @Test
+    void testDeposit_nonExistingAccount() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS)
+        };
+        BankAccount.deposit(accounts, 99, 500);
+        assertEquals(1000, accounts[0].getBalance()); // Balance should be unchanged
+    }
+
+    @Test
+    void testWithdraw_sufficientFunds() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS)
+        };
+        BankAccount.withdraw(accounts, 1, 300);
+        assertEquals(700, accounts[0].getBalance());
+    }
+
+    @Test
+    void testWithdraw_insufficientFunds() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS)
+        };
+        BankAccount.withdraw(accounts, 1, 1500);
+        assertEquals(1000, accounts[0].getBalance()); // Balance should be unchanged
+    }
+
+    @Test
+    void testWithdraw_nonExistingAccount() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS)
+        };
+        BankAccount.withdraw(accounts, 99, 500);
+        assertEquals(1000, accounts[0].getBalance()); // Balance should be unchanged
+    }
+
+    @Test
+    void testGetAccountsByType_Savings() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS),
+            new BankAccount(2, "Jane", 2000, BankAccount.AccountType.CURRENT),
+            new BankAccount(3, "Bob", 3000, BankAccount.AccountType.SAVINGS)
+        };
+        BankAccount[] savingsAccounts = BankAccount.getAccountsByType(accounts, BankAccount.AccountType.SAVINGS);
+        assertEquals(2, savingsAccounts.length);
+        assertTrue(savingsAccounts[0].getHolderName().equals("John") || savingsAccounts[1].getHolderName().equals("John"));
+    }
+
+    @Test
+    void testGetAccountsByType_nonExistingType() {
+        BankAccount[] accounts = {
+            new BankAccount(1, "John", 1000, BankAccount.AccountType.SAVINGS)
+        };
+        BankAccount[] currentAccounts = BankAccount.getAccountsByType(accounts, BankAccount.AccountType.CURRENT);
+        assertEquals(0, currentAccounts.length);
+    }
 }
