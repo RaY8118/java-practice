@@ -1,13 +1,17 @@
+package com.dsa.collections;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * This class demonstrates the basic functionalities of a HashMap in Java.
- * A HashMap stores key-value pairs. It is part of the Java Collections Framework.
+ * A HashMap stores key-value pairs. It is part of the Java Collections
+ * Framework.
  * Key characteristics:
  * - It does not maintain insertion order.
  * - It allows one null key and multiple null values.
- * - It provides O(1) average time complexity for put, get, and remove operations.
+ * - It provides O(1) average time complexity for put, get, and remove
+ * operations.
  */
 public class HashMapExample {
 
@@ -40,22 +44,25 @@ public class HashMapExample {
     // If the key is not found, it returns null.
     System.out.println("Alice's score: " + scores.get("Alice"));
     System.out.println("Score with null key: " + scores.get(null));
-    System.out.println("Score for 'Eve' (non-existent key): " + scores.get("Eve")); // Demonstrates null return for non-existent key
+    System.out.println("Score for 'Eve' (non-existent key): " + scores.get("Eve")); // Demonstrates null return for
+                                                                                    // non-existent key
 
     // 6. Checking for Key/Value Existence (containsKey and containsValue methods)
-    // containsKey(key) returns true if the map contains a mapping for the specified key.
-    // containsValue(value) returns true if the map maps one or more keys to the specified value.
+    // containsKey(key) returns true if the map contains a mapping for the specified
+    // key.
+    // containsValue(value) returns true if the map maps one or more keys to the
+    // specified value.
     System.out.println("Contains key 'Bob'? " + scores.containsKey("Bob"));
     System.out.println("Contains value 80? " + scores.containsValue(80));
     System.out.println("Contains key 'Frank'? " + scores.containsKey("Frank"));
 
     // 7. Removing Entries (remove method)
-    // The remove(key) method removes the mapping for the specified key from this map if present.
+    // The remove(key) method removes the mapping for the specified key from this
+    // map if present.
     scores.remove("Charlie");
     System.out.println("HashMap after removing Charlie: " + scores);
     scores.remove("NonExistent"); // Removing a non-existent key has no effect
     System.out.println("HashMap after trying to remove non-existent key: " + scores);
-
 
     // 8. Getting the Size of HashMap (size method)
     // The size() method returns the number of key-value mappings in this map.
@@ -80,7 +87,8 @@ public class HashMapExample {
 
     // 9.3. Iterate using entrySet() (Recommended for efficiency)
     // entrySet() returns a Set view of the mappings contained in this map.
-    // Each element in the set is a Map.Entry object, which contains both the key and the value.
+    // Each element in the set is a Map.Entry object, which contains both the key
+    // and the value.
     System.out.println("Entries in HashMap (Key -> Value):");
     for (Map.Entry<String, Integer> entry : scores.entrySet()) {
       System.out.println(entry.getKey() + " -> " + entry.getValue());

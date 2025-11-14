@@ -1,3 +1,5 @@
+package com.dsa.algorithms;
+
 /**
  * This class provides various utility methods for common string manipulation
  * and analysis tasks.

@@ -1,12 +1,17 @@
+package com.dsa.collections;
+
 import java.util.LinkedHashSet;
 import java.util.Iterator;
 
 public class LinkedHashSetExample {
     public static void main(String[] args) {
         // 1. Creating a LinkedHashSet
-        // A LinkedHashSet is an ordered version of HashSet that maintains a doubly-linked list
-        // running through all of its entries. This linkage list defines the iteration ordering,
-        // which is the order in which elements were inserted into the set (insertion-order).
+        // A LinkedHashSet is an ordered version of HashSet that maintains a
+        // doubly-linked list
+        // running through all of its entries. This linkage list defines the iteration
+        // ordering,
+        // which is the order in which elements were inserted into the set
+        // (insertion-order).
         LinkedHashSet<String> linkedHashSet = new LinkedHashSet<>();
         System.out.println("1. Initial LinkedHashSet: " + linkedHashSet);
 
@@ -53,7 +58,8 @@ public class LinkedHashSetExample {
         System.out.println("8. Is LinkedHashSet empty? " + linkedHashSet.isEmpty());
 
         // 9. Clearing all elements from the LinkedHashSet using clear()
-        // Removes all of the elements from this set. The set will be empty after this call returns.
+        // Removes all of the elements from this set. The set will be empty after this
+        // call returns.
         linkedHashSet.clear();
         System.out.println("9. LinkedHashSet after clearing all elements: " + linkedHashSet);
         System.out.println("   Is LinkedHashSet empty after clear()? " + linkedHashSet.isEmpty());
@@ -65,14 +71,17 @@ public class LinkedHashSetExample {
         linkedHashSet.addAll(newLinkedHashSet);
         System.out.println("10. LinkedHashSet after adding all from another collection: " + linkedHashSet);
 
-        // 11. Retaining only the elements that are contained in another collection using retainAll()
+        // 11. Retaining only the elements that are contained in another collection
+        // using retainAll()
         LinkedHashSet<String> commonElements = new LinkedHashSet<>();
         commonElements.add("Mango");
         commonElements.add("Grape");
         linkedHashSet.retainAll(commonElements);
-        System.out.println("11. LinkedHashSet after retaining common elements with {'Mango', 'Grape'}: " + linkedHashSet);
+        System.out
+                .println("11. LinkedHashSet after retaining common elements with {'Mango', 'Grape'}: " + linkedHashSet);
 
-        // 12. Removing all elements that are contained in another collection using removeAll()
+        // 12. Removing all elements that are contained in another collection using
+        // removeAll()
         linkedHashSet.add("Kiwi");
         linkedHashSet.add("Strawberry");
         System.out.println("    LinkedHashSet before removeAll: " + linkedHashSet);
@@ -94,7 +103,9 @@ public class LinkedHashSetExample {
         // Creates a shallow copy of the LinkedHashSet instance.
         LinkedHashSet<String> clonedLinkedHashSet = (LinkedHashSet<String>) linkedHashSet.clone();
         System.out.println("14. Cloned LinkedHashSet: " + clonedLinkedHashSet);
-        System.out.println("    Are original and cloned sets the same object? " + (linkedHashSet == clonedLinkedHashSet));
-        System.out.println("    Are original and cloned sets equal in content? " + linkedHashSet.equals(clonedLinkedHashSet));
+        System.out
+                .println("    Are original and cloned sets the same object? " + (linkedHashSet == clonedLinkedHashSet));
+        System.out.println(
+                "    Are original and cloned sets equal in content? " + linkedHashSet.equals(clonedLinkedHashSet));
     }
 }

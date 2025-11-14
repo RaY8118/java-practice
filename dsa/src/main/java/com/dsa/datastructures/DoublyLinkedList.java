@@ -1,3 +1,5 @@
+package com.dsa.datastructures;
+
 public class DoublyLinkedList {
 
     class Node {

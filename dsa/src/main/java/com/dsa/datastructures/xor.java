@@ -1,3 +1,5 @@
+package com.dsa.datastructures;
+
 public class xor {
 
     public static int test(int[] arr) {

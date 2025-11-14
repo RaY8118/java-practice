@@ -1,3 +1,4 @@
+package com.dsa.algorithms;
 
 import java.util.Stack;
 
@@ -36,6 +37,6 @@ public class NextGreater {
     }
 
     public static void main(String[] args) {
-        printNextGreater(new int[]{16, 7, 2, 15});
+        printNextGreater(new int[] { 16, 7, 2, 15 });
     }
 }

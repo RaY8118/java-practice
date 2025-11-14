@@ -1,3 +1,5 @@
+package com.dsa.algorithms;
+
 import java.util.Arrays;
 
 /**

@@ -1,23 +1,29 @@
+package com.dsa.algorithms;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.function.IntPredicate;
 import java.util.stream.Stream;
 
 /**
- * This class provides methods to find even numbers from one or more integer arrays.
+ * This class provides methods to find even numbers from one or more integer
+ * arrays.
  */
 public class FindEvenNums {
 
   /**
-   * Finds all even numbers from two given integer arrays and returns them as a new array.
+   * Finds all even numbers from two given integer arrays and returns them as a
+   * new array.
    * This method iterates through both arrays and collects even numbers.
    *
    * @param arr1 The first input array.
    * @param arr2 The second input array.
    * @return A new array containing all even numbers from both input arrays.
    *
-   * Time Complexity: O(n + m), where n is the length of arr1 and m is the length of arr2.
-   * Space Complexity: O(k), where k is the number of even numbers found (in the worst case, k = n + m).
+   *         Time Complexity: O(n + m), where n is the length of arr1 and m is the
+   *         length of arr2.
+   *         Space Complexity: O(k), where k is the number of even numbers found
+   *         (in the worst case, k = n + m).
    */
   public static int[] findEvenNums(int[] arr1, int[] arr2) {
     ArrayList<Integer> result = new ArrayList<>();
@@ -38,15 +44,19 @@ public class FindEvenNums {
   }
 
   /**
-   * Finds all even numbers from two given integer arrays using Java Streams and returns them as a new array.
-   * This method provides a more concise way to achieve the same result as {@code findEvenNums}.
+   * Finds all even numbers from two given integer arrays using Java Streams and
+   * returns them as a new array.
+   * This method provides a more concise way to achieve the same result as
+   * {@code findEvenNums}.
    *
    * @param arr1 The first input array.
    * @param arr2 The second input array.
    * @return A new array containing all even numbers from both input arrays.
    *
-   * Time Complexity: O(n + m), where n is the length of arr1 and m is the length of arr2.
-   * Space Complexity: O(k), where k is the number of even numbers found (in the worst case, k = n + m).
+   *         Time Complexity: O(n + m), where n is the length of arr1 and m is the
+   *         length of arr2.
+   *         Space Complexity: O(k), where k is the number of even numbers found
+   *         (in the worst case, k = n + m).
    */
   public static int[] findEvenNums2(int[] arr1, int[] arr2) {
     IntPredicate isEvenPred = num -> num % 2 == 0;
@@ -58,7 +68,8 @@ public class FindEvenNums {
 
   /**
    * Main method to demonstrate the functionality of finding even numbers.
-   * It initializes two arrays and uses both {@code findEvenNums} and {@code findEvenNums2}
+   * It initializes two arrays and uses both {@code findEvenNums} and
+   * {@code findEvenNums2}
    * to find and print the even numbers.
    *
    * @param args Command line arguments (not used).
@@ -79,4 +90,3 @@ public class FindEvenNums {
         .forEach(System.out::println);
   }
 }
-
