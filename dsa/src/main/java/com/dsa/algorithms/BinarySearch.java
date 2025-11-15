@@ -1,3 +1,5 @@
+package com.dsa.algorithms;
+
 /**
  * This class implements the Binary Search algorithm.
  * Binary Search is an efficient algorithm for finding an item from a sorted

@@ -1,5 +1,7 @@
 package com.dsa.datastructures;
 
+import java.util.Arrays;
+
 public class Stack {
 
     private final int[] stack;
@@ -52,15 +54,28 @@ public class Stack {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Stack [stack=" + Arrays.toString(Arrays.copyOfRange(stack, 0, top + 1)) + ", top=" + top + ", capacity="
+                + capacity + "]";
+    }
+
     public static void main(String[] args) {
+        // Create stack
         Stack stack = new Stack(5);
 
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-        stack.push(40);
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
 
-        stack.display();
+        // Read values from stack
+        System.out.println(stack.peek());
 
+        // Delete value from stack
+        System.out.println(stack.toString());
+        stack.pop();
+        System.out.println(stack.toString());
     }
 }
