@@ -1,4 +1,4 @@
-package com.dsa.algorithms;
+package com.dsa.algorithms.arrays;
 
 /**
  * This class provides a method to rotate an array to the left by one position.

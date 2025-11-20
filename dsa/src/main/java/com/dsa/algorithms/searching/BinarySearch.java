@@ -1,4 +1,4 @@
-package com.dsa.algorithms;
+package com.dsa.algorithms.searching;
 
 /**
  * This class implements the Binary Search algorithm.

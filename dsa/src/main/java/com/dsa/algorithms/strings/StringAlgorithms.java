@@ -1,4 +1,4 @@
-package com.dsa.algorithms;
+package com.dsa.algorithms.strings;
 
 /**
  * This class provides various utility methods for common string manipulation

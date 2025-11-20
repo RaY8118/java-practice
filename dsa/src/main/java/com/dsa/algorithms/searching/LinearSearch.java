@@ -1,4 +1,4 @@
-package com.dsa.algorithms;
+package com.dsa.algorithms.searching;
 
 import java.util.Arrays;
 import java.util.OptionalInt;

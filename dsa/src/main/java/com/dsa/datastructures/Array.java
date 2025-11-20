@@ -1,13 +1,10 @@
 package com.dsa.datastructures;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 public class Array {
     public static void main(String[] args) {
         String[] arr = new String[4];
-        Collection<String> list = new ArrayList<>();
         arr[0] = "one";
         arr[1] = "two";
         arr[2] = "three";

@@ -1,5 +1,7 @@
 package com.dsa.datastructures;
 
+import java.util.Arrays;
+
 public class Queue {
 
     private final int[] queue;
@@ -60,14 +62,31 @@ public class Queue {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Queue [queue=" + Arrays.toString(Arrays.copyOfRange(queue, front, rear)) + ", front=" + front
+                + ", rear=" + rear
+                + ", capacity="
+                + capacity + "]";
+    }
+
     public static void main(String[] args) {
+        // Create queue
         Queue queue = new Queue(5);
+
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
         queue.enqueue(4);
+        queue.enqueue(5);
 
-        queue.display();
+        // Read values from queue
+        System.out.println(queue.peek());
+
+        // Delete values from queue
+        System.out.println(queue.toString());
+        queue.dequeue();
+        System.out.println(queue.toString());
     }
 
 }

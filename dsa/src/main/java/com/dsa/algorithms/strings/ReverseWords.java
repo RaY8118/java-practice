@@ -1,4 +1,4 @@
-package com.dsa.algorithms;
+package com.dsa.algorithms.strings;
 
 /**
  * This class provides methods to reverse individual words within a sentence
