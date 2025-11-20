@@ -16,7 +16,7 @@ public class LinearSearch {
    *
    * @param arr  The array to be searched.
    * @param item The item to search for.
-   * @return The item if found, otherwise -1.
+   * @return The index of item if found, otherwise -1.
    *
    *         Time Complexity: O(n), where n is the number of elements in the
    *         array.
@@ -24,9 +24,14 @@ public class LinearSearch {
    *         Space Complexity: O(1), as it uses a constant amount of extra space.
    */
   public static Integer linearSearch(int[] arr, int item) {
-    for (int a : arr) {
-      if (a == item) {
-        return item;
+    if (arr.length == 0) {
+      return -1;
+    }
+
+    for (int i = 0; i < arr.length; i++) {
+      int element = arr[i];
+      if (element == item) {
+        return i;
       }
     }
     return -1;
