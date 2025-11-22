@@ -36,5 +36,104 @@ Replace `"com.dsa.algorithms.arrays.FindEvenNums"` with the fully qualified name
 *   **Language:** Java 21.
 *   **Build Tool:** Maven.
 *   **Package Structure:** Code is organized under `com.dsa` with sub-packages reflecting the type of algorithm or data structure (e.g., `com.dsa.algorithms.arrays`, `com.dsa.datastructures`).
-*   **Code Style:** Standard Java conventions are followed, including Javadoc comments for classes and methods, clear variable naming, and consistent formatting. Additionally, ensure Javadoc comments are regularly added to newly implemented algorithms and data structures, explicitly mentioning relevant DSA topics.
+*   **Code Style:** Standard Java conventions are followed, including Javadoc comments for classes and methods, clear variable naming, and consistent formatting. See the "Javadoc Conventions" section for more details.
 *   **IDE:** The presence of `.project`, `.classpath`, and `.settings/` suggests it might be developed using Eclipse, but it's a standard Maven project and should be compatible with any Java IDE.
+
+## Javadoc Conventions
+
+To maintain consistency across the project, all new classes and methods should be documented using Javadoc. The following is an example of a well-documented class:
+
+```java
+package com.dsa.algorithms.arrays;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * This class provides a solution to the "Kids with the Greatest Number of
+ * Candies" problem on LeetCode.
+ * <p>
+ * LeetCode problem 1431:
+ * https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+ * <p>
+ * It determines which kids will have the greatest number of candies if they are
+ * given some extra candies.
+ */
+public class KidsWithCandies {
+
+    /**
+     * The main method to test the kidsWithCandies function.
+     *
+     * @param args The command-line arguments.
+     */
+    public static void main(String[] args) {
+        int[] candies = { 2, 3, 5, 1, 3 };
+        int extraCandies = 3;
+        System.out.println(kidsWithCandies(candies, extraCandies));
+
+        int[] candies2 = { 4, 2, 1, 1, 2 };
+        int extraCandies2 = 1;
+        System.out.println(kidsWithCandies(candies2, extraCandies2));
+    }
+
+    /**
+     * Determines which kids will have the greatest number of candies after
+     * receiving extra candies.
+     *
+     * @param candies      An array of integers representing the number of candies
+     *                     each kid has.
+     * @param extraCandies The number of extra candies to be given to each kid.
+     * @return A list of booleans, where each element at index i is true if the i-th
+     *         kid will have the
+     *         greatest number of candies after receiving extra candies, and false
+     *         otherwise.
+     */
+    static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        List<Boolean> boolArray = new ArrayList<>();
+
+        for (int candy : candies) {
+            if (candy + extraCandies >= maxCandies(candies)) {
+                boolArray.add(true);
+            } else {
+                boolArray.add(false);
+            }
+        }
+        return boolArray;
+    }
+
+    /**
+     * Finds the maximum number of candies any kid has.
+     *
+     * @param candies An array of integers representing the number of candies each
+     *                kid has.
+     * @return The maximum number of candies.
+     */
+    private static int maxCandies(int[] candies) {
+        int maxCandy = candies[0];
+        for (int candy : candies) {
+            if (candy > maxCandy) {
+                maxCandy = candy;
+            }
+        }
+
+        return maxCandy;
+    }
+}
+```
+
+### Guidelines
+
+*   **Class Javadoc:**
+    *   The Javadoc for a class should provide a brief description of the class's purpose.
+    *   If the class is a solution to a specific problem (e.g., from LeetCode), include the problem number and a link to the problem description.
+    *   Use `<p>` tags to separate paragraphs for better readability.
+
+*   **Method Javadoc:**
+    *   The Javadoc for a method should describe what the method does.
+    *   Use the `@param` tag to describe each parameter.
+    *   Use the `@return` tag to describe the return value.
+    *   Use the `@throws` tag to describe any exceptions that the method might throw.
+
+*   **General:**
+    *   Write clear and concise descriptions.
+    *   Keep the Javadoc up-to-date with any changes to the code.
