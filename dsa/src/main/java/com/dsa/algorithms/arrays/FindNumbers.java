@@ -6,6 +6,8 @@ package com.dsa.algorithms.arrays;
 /**
  * This class provides a solution to find the number of integers in an array that have an even
  * number of digits.
+ *
+ * DSA Topics: Arrays, Mathematics, Counting, Iteration
  */
 public class FindNumbers {
   public static void main(String[] args) {

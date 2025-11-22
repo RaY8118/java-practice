@@ -7,12 +7,13 @@ import java.util.Arrays;
 /**
  * Implements the "Concatenation of Array" algorithm.
  * This class provides a solution to LeetCode problem 1929:
- * <a href="https://leetcode.com/problems/concatenation-of-array/">Concatenation of Array</a>
+ * <a href="https://leetcode.com/problems/concatenation-of-array/">Concatenation
+ * of Array</a>
  *
  * The problem asks to build an array `ans` of length `2 * n`
- * where `ans[i] == nums[i]` and `ans[i + n] == nums[i]` for `0 <= i < n` (0-indexed).
+ * where `ans[i] == nums[i]` and `ans[i + n] == nums[i]` for `0 <= i < n`
+ * (0-indexed).
  *
- * @author Parthasarathy
  */
 public class GetConcatenation {
     /**

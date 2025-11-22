@@ -8,6 +8,8 @@ import java.util.stream.Stream;
 /**
  * This class provides methods to find even numbers from one or more integer
  * arrays.
+ *
+ * DSA Topics: Arrays, Iteration, Conditional Logic, ArrayList, Java Stream API
  */
 public class FindEvenNums {
 

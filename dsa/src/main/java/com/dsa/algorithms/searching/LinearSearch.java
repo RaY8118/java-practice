@@ -8,6 +8,8 @@ import java.util.OptionalInt;
  * Linear search is a simple search algorithm that sequentially checks each
  * element
  * of the list until a match is found or the whole list has been searched.
+ *
+ * DSA Topics: Arrays, Searching, Iteration, Java Stream API
  */
 public class LinearSearch {
 

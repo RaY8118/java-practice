@@ -3,6 +3,12 @@ package com.dsa.algorithms.miscellaneous;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * This class provides a method to print the first 'n' binary numbers.
+ * It utilizes a Queue data structure to generate binary numbers in a breadth-first manner.
+ *
+ * DSA Topics: Queues, Iteration, Number Theory
+ */
 public class BinaryNumbers {
 
     public static void printBinary(int n) {

@@ -5,6 +5,8 @@ package com.dsa.algorithms.searching;
  * specified
  * range
  * in an integer array.
+ *
+ * DSA Topics: Arrays, Searching, Iteration
  */
 public class SearchInRange {
 

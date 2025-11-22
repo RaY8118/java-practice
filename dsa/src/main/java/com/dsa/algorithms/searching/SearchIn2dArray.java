@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * This class provides methods to search for a target element within a 2D integer array.
  * It implements a linear search approach for 2D arrays.
+ *
+ * DSA Topics: Arrays, Searching, Iteration
  */
 public class SearchIn2dArray {
     /**

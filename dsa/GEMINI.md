@@ -36,5 +36,5 @@ Replace `"com.dsa.algorithms.arrays.FindEvenNums"` with the fully qualified name
 *   **Language:** Java 21.
 *   **Build Tool:** Maven.
 *   **Package Structure:** Code is organized under `com.dsa` with sub-packages reflecting the type of algorithm or data structure (e.g., `com.dsa.algorithms.arrays`, `com.dsa.datastructures`).
-*   **Code Style:** Standard Java conventions are followed, including Javadoc comments for classes and methods, clear variable naming, and consistent formatting. Additionally, ensure Javadoc comments are regularly added to newly implemented algorithms and data structures.
+*   **Code Style:** Standard Java conventions are followed, including Javadoc comments for classes and methods, clear variable naming, and consistent formatting. Additionally, ensure Javadoc comments are regularly added to newly implemented algorithms and data structures, explicitly mentioning relevant DSA topics.
 *   **IDE:** The presence of `.project`, `.classpath`, and `.settings/` suggests it might be developed using Eclipse, but it's a standard Maven project and should be compatible with any Java IDE.

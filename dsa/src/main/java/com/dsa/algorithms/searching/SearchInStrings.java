@@ -3,6 +3,8 @@ package com.dsa.algorithms.searching;
 /**
  * This class provides a method to search for a target character within a given string.
  * The search is case-insensitive.
+ *
+ * DSA Topics: Strings, Searching, Iteration
  */
 public class SearchInStrings {
 

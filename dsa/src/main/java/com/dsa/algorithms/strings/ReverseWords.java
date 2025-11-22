@@ -3,6 +3,8 @@ package com.dsa.algorithms.strings;
 /**
  * This class provides methods to reverse individual words within a sentence
  * and to reverse a string.
+ *
+ * DSA Topics: Strings, Iteration, Arrays
  */
 public class ReverseWords {
 

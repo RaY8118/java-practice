@@ -7,12 +7,12 @@ import java.util.Arrays;
 /**
  * Implements the "Build Array from Permutation" algorithm.
  * This class provides a solution to LeetCode problem 1920:
- * <a href="https://leetcode.com/problems/build-array-from-permutation/">Build Array from Permutation</a>
+ * <a href="https://leetcode.com/problems/build-array-from-permutation/">Build
+ * Array from Permutation</a>
  *
  * The problem asks to build an array `ans` of the same length as `nums`
  * where `ans[i] = nums[nums[i]]` for each `0 <= i < nums.length`.
  *
- * @author Parthasarathy
  */
 public class BuildArray {
     /**
@@ -31,7 +31,8 @@ public class BuildArray {
 
     /**
      * Builds an array `ans` from a given 0-indexed permutation `nums`.
-     * The array `ans` is constructed such that `ans[i] = nums[nums[i]]` for each `i`.
+     * The array `ans` is constructed such that `ans[i] = nums[nums[i]]` for each
+     * `i`.
      *
      * @param nums The 0-indexed permutation array.
      * @return The array `ans` built according to the problem description.

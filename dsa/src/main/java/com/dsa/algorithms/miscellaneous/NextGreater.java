@@ -2,6 +2,12 @@ package com.dsa.algorithms.miscellaneous;
 
 import java.util.Stack;
 
+/**
+ * This class provides a method to find and print the next greater element for each element in an array.
+ * It utilizes a Stack data structure to efficiently determine the next greater elements.
+ *
+ * DSA Topics: Arrays, Stacks, Iteration
+ */
 public class NextGreater {
 
     public static void printNextGreater(int[] arr) {

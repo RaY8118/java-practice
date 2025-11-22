@@ -2,6 +2,12 @@ package com.dsa.algorithms.stacks;
 
 import java.util.Stack;
 
+/**
+ * This class provides a method to check if a given string has matching parentheses.
+ * It utilizes a Stack data structure to keep track of opening parentheses.
+ *
+ * DSA Topics: Stacks, Strings, Iteration
+ */
 public class MatchingParetheses {
 
     public static boolean hasMatchinngParentheses(String s) {

@@ -7,6 +7,8 @@ package com.dsa.algorithms.searching;
  * It works by repeatedly dividing in half the portion of the list that could
  * contain the item,
  * until the item is found or the possible remaining locations are eliminated.
+ *
+ * DSA Topics: Arrays, Searching, Iteration, Divide and Conquer
  */
 public class BinarySearch {
 

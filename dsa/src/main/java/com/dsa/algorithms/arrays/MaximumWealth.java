@@ -5,6 +5,8 @@ package com.dsa.algorithms.arrays;
 
 /**
  * This class provides a solution to find the maximum wealth among a list of customers.
+ *
+ * DSA Topics: Arrays, Iteration
  */
 public class MaximumWealth {
 
