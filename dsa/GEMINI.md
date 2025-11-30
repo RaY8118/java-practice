@@ -39,84 +39,77 @@ Replace `"com.dsa.algorithms.arrays.FindEvenNums"` with the fully qualified name
 *   **Code Style:** Standard Java conventions are followed, including Javadoc comments for classes and methods, clear variable naming, and consistent formatting. See the "Javadoc Conventions" section for more details.
 *   **IDE:** The presence of `.project`, `.classpath`, and `.settings/` suggests it might be developed using Eclipse, but it's a standard Maven project and should be compatible with any Java IDE.
 
+## Commit Message Conventions
+
+To maintain a clear and consistent commit history, please adhere to the following guidelines for commit messages:
+
+*   **Format:** Use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+    *   `type`: mandatory, e.g., `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`.
+    *   `scope` (optional): context of the commit, e.g., `(arrays)`, `(sorting)`, `(docs)`.
+    *   `description`: concise summary of the change.
+*   **Examples:**
+    *   `feat(arrays): Add KidsWithCandies solution`
+    *   `fix(sorting): Correct BubbleSort edge case`
+    *   `docs: Update Javadoc conventions`
+*   **Content:**
+    *   Start with an imperative mood: "Add", "Fix", "Change", not "Added", "Fixed", "Changed".
+    *   Keep the subject line (first line) short (50-72 characters).
+    *   Provide a more detailed body if necessary, explaining *why* the change was made and *what* its impact is.
+
 ## Javadoc Conventions
 
 To maintain consistency across the project, all new classes and methods should be documented using Javadoc. The following is an example of a well-documented class:
 
 ```java
-package com.dsa.algorithms.arrays;
+package com.dsa.algorithms.sorting;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 /**
- * This class provides a solution to the "Kids with the Greatest Number of
- * Candies" problem on LeetCode.
- * <p>
- * LeetCode problem 1431:
- * https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
- * <p>
- * It determines which kids will have the greatest number of candies if they are
- * given some extra candies.
+ * Implements the Bubble Sort algorithm to sort an array of integers.
+ * This class provides a method for sorting and a main method to demonstrate its usage.
  */
-public class KidsWithCandies {
-
+public class BubbleSort {
     /**
-     * The main method to test the kidsWithCandies function.
+     * Main method to demonstrate the Bubble Sort algorithm.
      *
-     * @param args The command-line arguments.
+     * @param args Command line arguments (not used).
      */
     public static void main(String[] args) {
-        int[] candies = { 2, 3, 5, 1, 3 };
-        int extraCandies = 3;
-        System.out.println(kidsWithCandies(candies, extraCandies));
-
-        int[] candies2 = { 4, 2, 1, 1, 2 };
-        int extraCandies2 = 1;
-        System.out.println(kidsWithCandies(candies2, extraCandies2));
+        int[] arr = { 3, 1, 5, 4, 2 };
+        bubbleSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 
     /**
-     * Determines which kids will have the greatest number of candies after
-     * receiving extra candies.
+     * Sorts an array of integers using the Bubble Sort algorithm.
+     * The algorithm repeatedly steps through the list, compares adjacent elements
+     * and swaps them if they are in the wrong order.
+     * <p>
+     * Time Complexity:
+     *   Worst Case: O(n^2)
+     *   Average Case: O(n^2)
+     *   Best Case: O(n)
+     * Space Complexity: O(1)
      *
-     * @param candies      An array of integers representing the number of candies
-     *                     each kid has.
-     * @param extraCandies The number of extra candies to be given to each kid.
-     * @return A list of booleans, where each element at index i is true if the i-th
-     *         kid will have the
-     *         greatest number of candies after receiving extra candies, and false
-     *         otherwise.
+     * @param arr The array of integers to be sorted.
      */
-    static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        List<Boolean> boolArray = new ArrayList<>();
-
-        for (int candy : candies) {
-            if (candy + extraCandies >= maxCandies(candies)) {
-                boolArray.add(true);
-            } else {
-                boolArray.add(false);
+    static void bubbleSort(int[] arr) {
+        boolean swapped;
+        for (int i = 0; i < arr.length; i++) {
+            swapped = false;
+            for (int j = 1; j < arr.length - i; j++) {
+                if (arr[j] < arr[j - 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
             }
         }
-        return boolArray;
-    }
-
-    /**
-     * Finds the maximum number of candies any kid has.
-     *
-     * @param candies An array of integers representing the number of candies each
-     *                kid has.
-     * @return The maximum number of candies.
-     */
-    private static int maxCandies(int[] candies) {
-        int maxCandy = candies[0];
-        for (int candy : candies) {
-            if (candy > maxCandy) {
-                maxCandy = candy;
-            }
-        }
-
-        return maxCandy;
     }
 }
 ```
@@ -130,6 +123,7 @@ public class KidsWithCandies {
 
 *   **Method Javadoc:**
     *   The Javadoc for a method should describe what the method does.
+    *   For all algorithms and data structures, include the time and space complexity in the method's Javadoc.
     *   Use the `@param` tag to describe each parameter.
     *   Use the `@return` tag to describe the return value.
     *   Use the `@throws` tag to describe any exceptions that the method might throw.
