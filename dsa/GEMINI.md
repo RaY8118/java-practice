@@ -123,7 +123,9 @@ public class BubbleSort {
 
 *   **Method Javadoc:**
     *   The Javadoc for a method should describe what the method does.
-    *   For all algorithms and data structures, include the time and space complexity in the method's Javadoc.
+    *   For all algorithms and data structures, include the time and space complexity in the method's Javadoc in the following format:
+        *   `Time Complexity: O(description)`
+        *   `Space Complexity: O(description)`
     *   Use the `@param` tag to describe each parameter.
     *   Use the `@return` tag to describe the return value.
     *   Use the `@throws` tag to describe any exceptions that the method might throw.
