@@ -7,26 +7,39 @@ import java.util.LinkedList;
  * This class demonstrates the basic functionalities of a LinkedList in Java.
  * A LinkedList is a part of the Java Collections Framework and implements both
  * the List and Deque interfaces. It is a doubly-linked list implementation.
+ * <p>
+ * Key Characteristics of LinkedList:
+ * <ul>
+ *     <li>Interface: List, Deque (meaning it can be used as a list or a double-ended queue)</li>
+ *     <li>Ordered: Yes (maintains insertion order of elements)</li>
+ *     <li>Allows duplicates: Yes (can store multiple identical elements)</li>
+ *     <li>Allows nulls: Yes (can store null values)</li>
+ *     <li>Thread-safe: No (not synchronized; must synchronize manually if accessed by multiple threads concurrently)</li>
+ *     <li>Structure: Doubly linked list (each node holds a reference to the next and previous node)</li>
+ * </ul>
+ * <p>
+ * Time Complexity for common operations:
+ * <ul>
+ *     <li>`add(E element)` (at end, `addLast`): O(1)</li>
+ *     <li>`addFirst(E element)`: O(1)</li>
+ *     <li>`add(int index, E element)`: O(n) (requires traversing to the `index`)</li>
+ *     <li>`get(int index)`: O(n) (requires traversing to the `index`)</li>
+ *     <li>`getFirst()` / `getLast()`: O(1)</li>
+ *     <li>`set(int index, E element)`: O(n) (requires traversing to the `index`)</li>
+ *     <li>`remove(Object o)`: O(n) (requires traversing to find the element)</li>
+ *     <li>`remove(int index)`: O(n) (requires traversing to the `index`)</li>
+ *     <li>`removeFirst()` / `removeLast()`: O(1)</li>
+ *     <li>`contains(Object o)`: O(n) (linear search)</li>
+ *     <li>`size()` / `isEmpty()`: O(1)</li>
+ *     <li>Iteration: O(n), where n is the number of elements.</li>
+ * </ul>
+ * <p>
+ * Space Complexity:
+ * <ul>
+ *     <li>O(n) for storing n elements.</li>
+ * </ul>
  */
 public class LinkedListExample {
-
-  /*
-   * Key Characteristics of LinkedList:
-   * - Interface: List, Deque (meaning it can be used as a list or a double-ended
-   * queue)
-   * - Ordered: Yes (maintains insertion order of elements)
-   * - Allows duplicates: Yes (can store multiple identical elements)
-   * - Allows nulls: Yes (can store null values)
-   * - Thread-safe: No (not synchronized; must synchronize manually if accessed by
-   * multiple threads concurrently)
-   * - Performance:
-   * - Good for frequent insertions/deletions in the middle of the list (O(1)
-   * after finding the position).
-   * - Slower for random access (getting an element by index) as it requires
-   * traversing from the beginning or end (O(n)).
-   * - Structure: Doubly linked list (each node holds a reference to the next and
-   * previous node)
-   */
   public static void main(String[] args) {
     // 1. LinkedList Initialization
     // Creates an empty LinkedList to store String elements.

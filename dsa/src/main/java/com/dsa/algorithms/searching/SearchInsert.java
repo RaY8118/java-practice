@@ -27,6 +27,17 @@ public class SearchInsert {
      * @param target The target value.
      * @return The index of the target value or the index where it would be inserted.
      */
+    /**
+     * Given a sorted array of distinct integers and a target value, return the index if the target is found.
+     * If not, return the index where it would be if it were inserted in order.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums   The sorted array of distinct integers.
+     * @param target The target value.
+     * @return The index of the target value or the index where it would be inserted.
+     */
     static int searchInsert(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;

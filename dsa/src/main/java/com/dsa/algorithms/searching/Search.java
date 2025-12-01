@@ -32,6 +32,15 @@ public class Search {
      * @param arr The rotated sorted array.
      * @return The index of the pivot element.
      */
+    /**
+     * Finds the pivot index in a rotated sorted array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param arr The rotated sorted array.
+     * @return The index of the pivot element.
+     */
     static int findPivot(int[] arr) {
         int start = 0;
         int end = arr.length - 1;
@@ -55,6 +64,16 @@ public class Search {
      * @param target The value to search for.
      * @return The index of the target value if found, otherwise -1.
      */
+    /**
+     * Searches for a target value in a rotated sorted array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array, due to finding pivot and then performing binary search.
+     * Space Complexity: O(1)
+     *
+     * @param nums   The rotated sorted array.
+     * @param target The value to search for.
+     * @return The index of the target value if found, otherwise -1.
+     */
     static int search(int[] nums, int target) {
         int pivot = findPivot(nums);
         if (pivot == 0) {
@@ -69,6 +88,18 @@ public class Search {
 
     /**
      * Performs a binary search on a sorted array.
+     *
+     * @param arr    The sorted array.
+     * @param start  The starting index of the search range.
+     * @param end    The ending index of the search range.
+     * @param target The value to search for.
+     * @return The index of the target value if found, otherwise -1.
+     */
+    /**
+     * Performs a binary search on a sorted array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array (or the search range).
+     * Space Complexity: O(1)
      *
      * @param arr    The sorted array.
      * @param start  The starting index of the search range.

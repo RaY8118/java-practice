@@ -9,22 +9,33 @@ import java.util.List;
  * `java.util.ArrayList`.
  * `ArrayList` is a resizable array implementation of the `List` interface.
  * It is part of the Java Collections Framework.
+ * <p>
+ * Key Characteristics of ArrayList:
+ * <ul>
+ *     <li>Ordered: Yes (maintains insertion order)</li>
+ *     <li>Allows duplicates: Yes</li>
+ *     <li>Allows nulls: Yes</li>
+ *     <li>Thread-safe: No (not synchronized; for thread-safe operations, consider `Collections.synchronizedList` or `java.util.concurrent.CopyOnWriteArrayList`)</li>
+ *     <li>Underlying data structure: Dynamic array</li>
+ * </ul>
+ * <p>
+ * Time Complexity for common operations:
+ * <ul>
+ *     <li>`add(E element)` (at end): Amortized O(1) (O(n) in worst case when capacity is exceeded and resize is needed)</li>
+ *     <li>`add(int index, E element)`: O(n) (elements need to be shifted)</li>
+ *     <li>`get(int index)`: O(1) (random access)</li>
+ *     <li>`set(int index, E element)`: O(1)</li>
+ *     <li>`remove(int index)` or `remove(Object o)`: O(n) (elements need to be shifted)</li>
+ *     <li>`contains(Object o)`: O(n) (linear search)</li>
+ *     <li>`size()` / `isEmpty()`: O(1)</li>
+ * </ul>
+ * <p>
+ * Space Complexity:
+ * <ul>
+ *     <li>O(n) for storing n elements.</li>
+ * </ul>
  */
 public class ArrayListExample {
-
-    /*
-     * Key Characteristics of ArrayList:
-     * - Ordered: Yes (maintains insertion order)
-     * - Allows duplicates: Yes
-     * - Allows nulls: Yes
-     * - Thread-safe: No (not synchronized; for thread-safe operations, consider
-     * `Collections.synchronizedList` or
-     * `java.util.concurrent.CopyOnWriteArrayList`)
-     * - Underlying data structure: Dynamic array
-     * - Access time: O(1) on average for `get` and `set` operations (random access)
-     * - Insertion/Deletion time: O(n) on average for `add(index, element)` and
-     * `remove(index)` as elements need to be shifted. O(1) for `add` at the end.
-     */
     public static void main(String[] args) {
         // 1. Initialization: Creating an ArrayList of Strings
         // The `List` interface is used for polymorphism, allowing easy switching to

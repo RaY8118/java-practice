@@ -30,6 +30,17 @@ public class SearchRange {
      * @return An array of two integers representing the start and end indices of the target value.
      *         If the target is not found, returns [-1, -1].
      */
+    /**
+     * Finds the starting and ending position of a given target value in a sorted array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums   The sorted array of integers.
+     * @param target The value to search for.
+     * @return An array of two integers representing the start and end indices of the target value.
+     *         If the target is not found, returns [-1, -1].
+     */
     static int[] searchRange(int[] nums, int target) {
         int min = 0;
         int max = nums.length - 1;

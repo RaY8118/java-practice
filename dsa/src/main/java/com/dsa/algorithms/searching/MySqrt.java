@@ -25,6 +25,15 @@ public class MySqrt {
      * @param x The non-negative integer.
      * @return The integer square root of x.
      */
+    /**
+     * Calculates the integer square root of a non-negative integer.
+     * <p>
+     * Time Complexity: O(log x), where x is the input number.
+     * Space Complexity: O(1)
+     *
+     * @param x The non-negative integer.
+     * @return The integer square root of x.
+     */
     static int mySqrt(int x) {
         int min = 0;
         int max = x;

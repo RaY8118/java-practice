@@ -7,6 +7,14 @@ public class DoublyLinkedList {
         Node prev;
         Node next;
 
+        /**
+         * Constructs a new Node with the given data.
+         * <p>
+         * Time Complexity: O(1)
+         * Space Complexity: O(1)
+         *
+         * @param data The data to be stored in the node.
+         */
         Node(int data) {
             this.data = data;
             this.prev = null;
@@ -16,6 +24,14 @@ public class DoublyLinkedList {
 
     Node head;
 
+    /**
+     * Inserts a new node with the given data at the end of the doubly linked list.
+     * <p>
+     * Time Complexity: O(n) in the worst case, where n is the number of nodes in the list.
+     * Space Complexity: O(1)
+     *
+     * @param data The data to be inserted.
+     */
     void insert(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -30,6 +46,14 @@ public class DoublyLinkedList {
         newNode.prev = curr;
     }
 
+    /**
+     * Deletes the first occurrence of a node with the given data from the doubly linked list.
+     * <p>
+     * Time Complexity: O(n) in the worst case, where n is the number of nodes in the list.
+     * Space Complexity: O(1)
+     *
+     * @param data The data of the node to be deleted.
+     */
     void delete(int data) {
         if (head == null)
             return;
@@ -56,6 +80,12 @@ public class DoublyLinkedList {
         curr = curr.next;
     }
 
+    /**
+     * Displays the elements of the doubly linked list in forward order.
+     * <p>
+     * Time Complexity: O(n), where n is the number of nodes in the list.
+     * Space Complexity: O(1)
+     */
     void displayForward() {
         Node curr = head;
         while (curr != null) {
@@ -65,6 +95,12 @@ public class DoublyLinkedList {
         System.out.println("null");
     }
 
+    /**
+     * Displays the elements of the doubly linked list in backward order.
+     * <p>
+     * Time Complexity: O(n), where n is the number of nodes in the list.
+     * Space Complexity: O(1)
+     */
     void displayBackward() {
         if (head == null) {
             System.out.println("null");

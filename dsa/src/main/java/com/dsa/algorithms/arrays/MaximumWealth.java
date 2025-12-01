@@ -23,6 +23,16 @@ public class MaximumWealth {
      *     i-th customer has in the j-th bank.
      * @return The wealth of the richest customer.
      */
+    /**
+     * Calculates the maximum wealth of a customer.
+     * <p>
+     * Time Complexity: O(m * n), where m is the number of customers (rows) and n is the maximum number of bank accounts (columns) for any customer.
+     * Space Complexity: O(1)
+     *
+     * @param accounts A 2D integer array where {@code accounts[i][j]} is the amount of money the
+     *     i-th customer has in the j-th bank.
+     * @return The wealth of the richest customer.
+     */
     static int maxWealth(int[][] accounts) {
         int ans = Integer.MIN_VALUE;
         for (int person = 0; person < accounts.length; person++) {

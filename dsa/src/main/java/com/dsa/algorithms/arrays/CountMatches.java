@@ -29,6 +29,9 @@ public class CountMatches {
 
     /**
      * Counts the number of items that match a given rule.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      *
      * @param items     A list of items, where each item is a list of strings
      *                  representing [type, color, name].

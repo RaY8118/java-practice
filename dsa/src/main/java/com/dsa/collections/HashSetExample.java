@@ -11,6 +11,29 @@ import java.util.Set;
  * It uses a hash table for storage, which means it provides constant-time performance
  * for the basic operations (add, remove, contains, and size), assuming the hash function
  * disperses the elements properly among the buckets.
+ * <p>
+ * Key Characteristics of HashSet:
+ * <ul>
+ *     <li>Does not maintain any insertion order.</li>
+ *     <li>Does not allow duplicate elements.</li>
+ *     <li>Allows one null element.</li>
+ *     <li>Not synchronized (not thread-safe).</li>
+ *     <li>Underlying data structure: Hash table (internally uses a HashMap).</li>
+ * </ul>
+ * <p>
+ * Time Complexity for common operations (assuming good hash function and minimal collisions):
+ * <ul>
+ *     <li>`add(E element)`: Average O(1), Worst Case O(n) (due to hash collisions and resizing).</li>
+ *     <li>`remove(Object o)`: Average O(1), Worst Case O(n) (due to hash collisions).</li>
+ *     <li>`contains(Object o)`: Average O(1), Worst Case O(n) (due to hash collisions).</li>
+ *     <li>`size()` / `isEmpty()`: O(1).</li>
+ *     <li>Iteration: O(n), where n is the number of elements.</li>
+ * </ul>
+ * <p>
+ * Space Complexity:
+ * <ul>
+ *     <li>O(n) for storing n elements.</li>
+ * </ul>
  */
 public class HashSetExample {
 

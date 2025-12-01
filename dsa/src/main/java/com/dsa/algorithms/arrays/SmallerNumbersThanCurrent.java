@@ -39,6 +39,18 @@ public class SmallerNumbersThanCurrent {
      *         numbers in the input
      *         array that are smaller than nums[i].
      */
+    /**
+     * For each number in an array, counts how many other numbers in the array are
+     * smaller than it.
+     * <p>
+     * Time Complexity: O(n^2), where n is the length of the input array.
+     * Space Complexity: O(n), for the new array to store the results.
+     *
+     * @param nums An array of integers.
+     * @return An array of integers where each element at index i is the count of
+     *         numbers in the input
+     *         array that are smaller than nums[i].
+     */
     static int[] smallerNumbersThanCurrent(int[] nums) {
         int[] ans = new int[nums.length];
 

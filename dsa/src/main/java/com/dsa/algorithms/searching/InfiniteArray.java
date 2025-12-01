@@ -32,6 +32,19 @@ public class InfiniteArray {
      * @param target The value to search for.
      * @return The index of the target if found, otherwise -1.
      */
+    /**
+     * Searches for a target value in a simulated infinite sorted array.
+     * The array is considered "infinite" in the sense that its size is unknown
+     * and cannot be accessed directly. The method first finds a range where
+     * the target might be present and then performs a binary search within that range.
+     * <p>
+     * Time Complexity: O(log k), where k is the index of the target element.
+     * Space Complexity: O(1)
+     *
+     * @param nums The sorted array to search within.
+     * @param target The value to search for.
+     * @return The index of the target if found, otherwise -1.
+     */
     static int infiniteArray(int[] nums, int target) {
         int start = 0;
         int end = 1;

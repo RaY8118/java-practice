@@ -39,6 +39,19 @@ public class OddCells {
      *                column to increment.
      * @return The number of cells in the resulting matrix that have odd values.
      */
+    /**
+     * Counts the number of cells with odd values in a matrix after incrementing
+     * rows and columns.
+     * <p>
+     * Time Complexity: O(k * (m + n) + m * n), where k is the number of indices, m is the number of rows, and n is the number of columns.
+     * Space Complexity: O(m * n) for the matrix.
+     *
+     * @param m       The number of rows in the matrix.
+     * @param n       The number of columns in the matrix.
+     * @param indices A 2D array where each element [ri, ci] specifies a row and
+     *                column to increment.
+     * @return The number of cells in the resulting matrix that have odd values.
+     */
     static int oddCells(int m, int n, int[][] indices) {
         int[][] matrix = new int[m][n];
         for (int[] row : indices) {

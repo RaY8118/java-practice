@@ -9,6 +9,14 @@ public class Queue {
     private int rear;
     private final int capacity;
 
+    /**
+     * Initializes a new Queue with a given capacity.
+     * <p>
+     * Time Complexity: O(size) for array initialization.
+     * Space Complexity: O(size) for the internal array.
+     *
+     * @param size The maximum capacity of the queue.
+     */
     public Queue(int size) {
         queue = new int[size];
         capacity = size;
@@ -16,6 +24,14 @@ public class Queue {
         rear = -1;
     }
 
+    /**
+     * Adds an element to the rear of the queue.
+     * <p>
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     *
+     * @param value The element to be added to the queue.
+     */
     public void enqueue(int value) {
         if (isFull()) {
             System.out.println("Queue is full");
@@ -24,6 +40,14 @@ public class Queue {
         queue[++rear] = value;
     }
 
+    /**
+     * Removes and returns the element from the front of the queue.
+     * <p>
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     *
+     * @return The element at the front of the queue, or -1 if the queue is empty.
+     */
     public int dequeue() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
@@ -32,6 +56,14 @@ public class Queue {
         return queue[front++];
     }
 
+    /**
+     * Returns the element at the front of the queue without removing it.
+     * <p>
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     *
+     * @return The element at the front of the queue, or -1 if the queue is empty.
+     */
     public int peek() {
         if (isEmpty()) {
             System.out.println("Queue is empty");
@@ -40,18 +72,48 @@ public class Queue {
         return queue[front];
     }
 
+    /**
+     * Checks if the queue is empty.
+     * <p>
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     *
+     * @return true if the queue is empty, false otherwise.
+     */
     public boolean isEmpty() {
         return front > rear;
     }
 
+    /**
+     * Checks if the queue is full.
+     * <p>
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     *
+     * @return true if the queue is full, false otherwise.
+     */
     public boolean isFull() {
         return rear == capacity - 1;
     }
 
+    /**
+     * Returns the number of elements currently in the queue.
+     * <p>
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     *
+     * @return The number of elements in the queue.
+     */
     public int size() {
         return rear - front + 1;
     }
 
+    /**
+     * Displays the elements of the queue from front to rear.
+     * <p>
+     * Time Complexity: O(n), where n is the current number of elements in the queue.
+     * Space Complexity: O(1)
+     */
     public void display() {
         if (isEmpty()) {
             System.out.println("Queue is empty");

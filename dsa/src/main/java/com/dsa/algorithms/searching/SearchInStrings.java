@@ -16,6 +16,17 @@ public class SearchInStrings {
      * @param target The character to search for.
      * @return {@code true} if the target character is found in the string, {@code false} otherwise.
      */
+    /**
+     * Searches for a target character within a given string.
+     * The search is case-insensitive, meaning 'A' will match 'a'.
+     * <p>
+     * Time Complexity: O(n), where n is the length of the input string.
+     * Space Complexity: O(n), due to the creation of a char array from the string.
+     *
+     * @param str The string to be searched.
+     * @param target The character to search for.
+     * @return {@code true} if the target character is found in the string, {@code false} otherwise.
+     */
     static boolean search(String str, char target) {
         if (str.length() == 0) {
             return false;

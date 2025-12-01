@@ -34,6 +34,10 @@ public class GetConcatenation {
      * Builds an array `ans` by concatenating the given array `nums` with itself.
      * The resulting array `ans` will have a length of `2 * nums.length`.
      *
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     *
      * @param nums The input integer array.
      * @return The concatenated array `ans`.
      */

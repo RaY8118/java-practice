@@ -11,6 +11,15 @@ import java.util.Queue;
  */
 public class BinaryNumbers {
 
+    /**
+     * Prints the first 'n' binary numbers.
+     * It uses a Queue to generate binary numbers in a breadth-first manner.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     *
+     * @param n The number of binary numbers to print.
+     */
     public static void printBinary(int n) {
         if (n <= 0) {
             System.out.println();

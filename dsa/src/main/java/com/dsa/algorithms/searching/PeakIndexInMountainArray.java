@@ -35,6 +35,17 @@ public class PeakIndexInMountainArray {
      * @param arr An array of integers representing a mountain array.
      * @return The index of the peak element in the mountain array.
      */
+    /**
+     * Finds the peak index in a mountain array.
+     * A mountain array is guaranteed to have a peak.
+     * The algorithm uses a binary search approach to efficiently find the peak.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param arr An array of integers representing a mountain array.
+     * @return The index of the peak element in the mountain array.
+     */
     static int peakIndexInMountainArray(int[] arr) {
         int start = 0;
         int end = arr.length - 1;

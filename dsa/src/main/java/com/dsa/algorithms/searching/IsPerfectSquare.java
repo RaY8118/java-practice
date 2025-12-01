@@ -29,6 +29,15 @@ public class IsPerfectSquare {
      * @param num The number to check.
      * @return true if the number is a perfect square, false otherwise.
      */
+    /**
+     * Checks if a given number is a perfect square.
+     * <p>
+     * Time Complexity: O(log num), where num is the input number.
+     * Space Complexity: O(1)
+     *
+     * @param num The number to check.
+     * @return true if the number is a perfect square, false otherwise.
+     */
     static boolean isPerfectSquare(int num) {
         int min = 0;
         int max = num;

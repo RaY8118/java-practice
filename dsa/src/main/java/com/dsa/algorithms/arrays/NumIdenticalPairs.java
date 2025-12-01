@@ -32,6 +32,16 @@ public class NumIdenticalPairs {
      * @param nums An array of integers.
      * @return The number of good pairs.
      */
+    /**
+     * Counts the number of "good pairs" in an array.
+     * A "good pair" is a pair of indices (i, j) in an array such that nums[i] == nums[j] and i < j.
+     * <p>
+     * Time Complexity: O(n^2), where n is the length of the input array.
+     * Space Complexity: O(1)
+     *
+     * @param nums An array of integers.
+     * @return The number of good pairs.
+     */
     static int numIdenticalPairs(int[] nums) {
         int count = 0;
         for (int i = 0; i < nums.length; i++) {

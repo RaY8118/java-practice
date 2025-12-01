@@ -24,6 +24,14 @@ public class RunningSum {
      * @param nums The input array of integers.
      * @return A new array with the running sum.
      */
+    /**
+     * Calculates the running sum of an array.
+     * <p>
+     * Time Complexity: O(n^2), where n is the length of the array, due to repeated sumArray calls.
+     * Space Complexity: O(n), where n is the length of the array, for storing the result.
+     * @param nums The input array of integers.
+     * @return A new array with the running sum.
+     */
     static int[] runningSum(int[] nums) {
         int[] ans = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
@@ -35,6 +43,16 @@ public class RunningSum {
 
     /**
      * Calculates the sum of all elements in an array up to a given index.
+     * @param nums The input array of integers.
+     * @param i The index to sum up to (inclusive).
+     * @return The sum of elements from index 0 to i.
+     */
+    /**
+     * Calculates the sum of all elements in an array up to a given index.
+     * <p>
+     * Time Complexity: O(i), where i is the given index. In the worst case, O(n) where n is the array length.
+     * Space Complexity: O(1)
+     *
      * @param nums The input array of integers.
      * @param i The index to sum up to (inclusive).
      * @return The sum of elements from index 0 to i.

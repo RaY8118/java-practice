@@ -34,6 +34,10 @@ public class BuildArray {
      * The array `ans` is constructed such that `ans[i] = nums[nums[i]]` for each
      * `i`.
      *
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     *
      * @param nums The 0-indexed permutation array.
      * @return The array `ans` built according to the problem description.
      */

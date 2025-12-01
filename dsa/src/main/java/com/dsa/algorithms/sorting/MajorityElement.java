@@ -23,6 +23,9 @@ public class MajorityElement {
 
     /**
      * Finds the majority element in an array.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      *
      * @param nums An array of integers.
      * @return The majority element.

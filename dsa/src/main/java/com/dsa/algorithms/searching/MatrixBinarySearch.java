@@ -35,6 +35,17 @@ public class MatrixBinarySearch {
      * @return An array containing the row and column of the target, or {-1, -1} if
      *         not found.
      */
+    /**
+     * Searches for a target value in a row-wise and column-wise sorted matrix.
+     * <p>
+     * Time Complexity: O(m + n), where m is the number of rows and n is the number of columns in the matrix.
+     * Space Complexity: O(1)
+     *
+     * @param matrix The sorted matrix to search in.
+     * @param target The value to search for.
+     * @return An array containing the row and column of the target, or {-1, -1} if
+     *         not found.
+     */
     static int[] search(int[][] matrix, int target) {
         int r = 0;
         int c = matrix.length - 1;

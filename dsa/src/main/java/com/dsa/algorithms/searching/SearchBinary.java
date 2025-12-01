@@ -30,6 +30,17 @@ public class SearchBinary {
      * @param target The integer value to search for.
      * @return The index of the target if it is found, otherwise -1.
      */
+    /**
+     * Searches for a target value in a sorted array of integers using the binary
+     * search algorithm.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums   An array of integers sorted in ascending order.
+     * @param target The integer value to search for.
+     * @return The index of the target if it is found, otherwise -1.
+     */
     static int search(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;

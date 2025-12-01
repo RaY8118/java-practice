@@ -33,6 +33,9 @@ public class KidsWithCandies {
     /**
      * Determines which kids will have the greatest number of candies after
      * receiving extra candies.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
      *
      * @param candies      An array of integers representing the number of candies
      *                     each kid has.
@@ -44,9 +47,10 @@ public class KidsWithCandies {
      */
     static List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         List<Boolean> boolArray = new ArrayList<>();
+        int maxCandies = maxCandies(candies);
 
         for (int candy : candies) {
-            if (candy + extraCandies >= maxCandies(candies)) {
+            if (candy + extraCandies >= maxCandies) {
                 boolArray.add(true);
             } else {
                 boolArray.add(false);
@@ -57,6 +61,9 @@ public class KidsWithCandies {
 
     /**
      * Finds the maximum number of candies any kid has.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      *
      * @param candies An array of integers representing the number of candies each
      *                kid has.

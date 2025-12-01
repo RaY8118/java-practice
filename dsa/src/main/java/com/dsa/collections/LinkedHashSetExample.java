@@ -1,8 +1,38 @@
 package com.dsa.collections;
 
-import java.util.LinkedHashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 
+/**
+ * This class demonstrates the basic functionalities of `java.util.LinkedHashSet`.
+ * A `LinkedHashSet` is an ordered version of `HashSet` that maintains a
+ * doubly-linked list running through all of its entries. This linkage list
+ * defines the iteration ordering, which is the order in which elements were
+ * inserted into the set (insertion-order).
+ * <p>
+ * Key Characteristics of LinkedHashSet:
+ * <ul>
+ *     <li>Maintains insertion order.</li>
+ *     <li>Does not allow duplicate elements.</li>
+ *     <li>Allows one null element.</li>
+ *     <li>Not synchronized (not thread-safe).</li>
+ *     <li>Underlying data structure: Hash table with a linked list.</li>
+ * </ul>
+ * <p>
+ * Time Complexity for common operations (assuming good hash function and minimal collisions):
+ * <ul>
+ *     <li>`add(E element)`: Average O(1), Worst Case O(n) (due to hash collisions and resizing of the underlying HashMap).</li>
+ *     <li>`remove(Object o)`: Average O(1), Worst Case O(n) (due to hash collisions).</li>
+ *     <li>`contains(Object o)`: Average O(1), Worst Case O(n) (due to hash collisions).</li>
+ *     <li>`size()` / `isEmpty()`: O(1).</li>
+ *     <li>Iteration: O(n), where n is the number of elements.</li>
+ * </ul>
+ * <p>
+ * Space Complexity:
+ * <ul>
+ *     <li>O(n) for storing n elements (due to both hash table and linked list overhead).</li>
+ * </ul>
+ */
 public class LinkedHashSetExample {
     public static void main(String[] args) {
         // 1. Creating a LinkedHashSet

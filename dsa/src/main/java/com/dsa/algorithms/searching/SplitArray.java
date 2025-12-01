@@ -29,6 +29,20 @@ public class SplitArray {
      * @param k    The number of subarrays to split the array into.
      * @return The minimized largest sum among the k subarrays.
      */
+    /**
+     * Given an array nums which consists of non-negative integers and an integer
+     * k, you can split the
+     * array into k non-empty continuous subarrays. Write an algorithm to minimize
+     * the largest sum among
+     * these k subarrays.
+     * <p>
+     * Time Complexity: O(n * log S), where n is the length of the array and S is the sum of all elements in the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums The array of non-negative integers.
+     * @param k    The number of subarrays to split the array into.
+     * @return The minimized largest sum among the k subarrays.
+     */
     static int splitArray(int[] nums, int k) {
         int start = 0;
         int end = 0;

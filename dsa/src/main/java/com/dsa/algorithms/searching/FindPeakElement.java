@@ -28,6 +28,15 @@ public class FindPeakElement {
      * @param nums The input array.
      * @return The index of a peak element.
      */
+    /**
+     * Finds a peak element in the given array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums The input array.
+     * @return The index of a peak element.
+     */
     static int findPeakElement(int[] nums) {
         int start = 0;
         int end = nums.length - 1;

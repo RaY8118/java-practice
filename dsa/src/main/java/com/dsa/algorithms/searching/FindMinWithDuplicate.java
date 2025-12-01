@@ -36,6 +36,17 @@ public class FindMinWithDuplicate {
      *             duplicates.
      * @return The minimum element in the array.
      */
+    /**
+     * Finds the minimum element in a rotated sorted array that may contain
+     * duplicates.
+     * <p>
+     * Time Complexity: O(log n) in best/average case, O(n) in worst case (due to duplicates), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums An array of integers that is sorted, rotated, and may contain
+     *             duplicates.
+     * @return The minimum element in the array.
+     */
     static int findMin(int[] nums) {
         int start = 0;
         int end = nums.length - 1;

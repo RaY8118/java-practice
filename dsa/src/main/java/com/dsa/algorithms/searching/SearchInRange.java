@@ -21,6 +21,20 @@ public class SearchInRange {
      * @return The index of the target element if found within the range, otherwise
      *         -1.
      */
+    /**
+     * Searches for a target element within a specified range [start, end] in the
+     * given array.
+     * <p>
+     * Time Complexity: O(k), where k is the size of the search range (end - start + 1). In the worst case, O(n) where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param arr    The array to be searched.
+     * @param target The element to search for.
+     * @param start  The starting index of the search range (inclusive).
+     * @param end    The ending index of the search range (inclusive).
+     * @return The index of the target element if found within the range, otherwise
+     *         -1.
+     */
     static int search(int[] arr, int target, int start, int end) {
         if (arr.length == 0) {
             return -1;

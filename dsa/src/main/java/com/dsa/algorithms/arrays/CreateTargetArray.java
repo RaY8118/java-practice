@@ -34,6 +34,9 @@ public class CreateTargetArray {
     /**
      * Creates a target array by inserting elements from `nums` at positions
      * specified in `index`.
+     * <p>
+     * Time Complexity: O(n^2)
+     * Space Complexity: O(n)
      *
      * @param nums  An array of integers to be inserted.
      * @param index An array of indices at which to insert the elements from `nums`.

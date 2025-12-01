@@ -33,6 +33,9 @@ public class Merge {
 
     /**
      * Merges two sorted arrays into one sorted array.
+     * <p>
+     * Time Complexity: O((m+n)log(m+n))
+     * Space Complexity: O(log(m+n))
      *
      * @param nums1 The first sorted array, with space for the merged result.
      * @param m     The number of elements in nums1.

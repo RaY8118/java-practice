@@ -2,6 +2,15 @@ package com.dsa.datastructures;
 
 public class xor {
 
+    /**
+     * Calculates the XOR sum of all elements in the given array.
+     *
+     * @param arr The input array of integers.
+     * @return The XOR sum of the elements.
+     * <p>
+     * Time Complexity: O(n), where n is the length of the array.
+     * Space Complexity: O(1)
+     */
     public static int test(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {

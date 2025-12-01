@@ -26,6 +26,17 @@ public class Shuffle {
      * @param n The half size of the array.
      * @return A new array with the shuffled elements.
      */
+    /**
+     * Shuffles an array of 2n elements.
+     * The array is shuffled into the form [x1,y1,x2,y2,...,xn,yn].
+     * <p>
+     * Time Complexity: O(n), where n is half the length of the input array.
+     * Space Complexity: O(n), for the new array of size 2n.
+     *
+     * @param nums The input array of 2n integers.
+     * @param n The half size of the array.
+     * @return A new array with the shuffled elements.
+     */
     static int[] shuffle(int[] nums, int n) {
         int[] ans = new int[2 * n];
 

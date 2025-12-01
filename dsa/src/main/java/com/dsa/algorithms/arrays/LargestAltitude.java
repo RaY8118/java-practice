@@ -31,6 +31,9 @@ public class LargestAltitude {
 
     /**
      * Calculates the largest altitude reached during a bike ride.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
      *
      * @param gain An array of integers representing the altitude gain between
      *             points.

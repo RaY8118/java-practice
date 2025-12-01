@@ -33,6 +33,15 @@ public class FindMin {
      * @param nums An array of integers that is sorted and rotated.
      * @return The minimum element in the array.
      */
+    /**
+     * Finds the minimum element in a rotated sorted array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param nums An array of integers that is sorted and rotated.
+     * @return The minimum element in the array.
+     */
     static int findMin(int[] nums) {
         int start = 0;
         int end = nums.length - 1;

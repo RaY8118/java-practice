@@ -13,14 +13,12 @@ public class ReverseArray {
    * Reverses the given array and returns a new array with the elements in reverse
    * order.
    * This method does not modify the original array.
+   * <p>
+   * Time Complexity: O(n), where n is the number of elements in the array.
+   * Space Complexity: O(n), for the new array.
    *
    * @param arr The input array to be reversed.
    * @return A new array with elements in reverse order.
-   *
-   *         Time complexity: O(n), where n is the number of elements in the
-   *         array.
-   *         Space complexity: O(n) for the new array.
-   *         Auxiliary space: O(1) (excluding the space for the result array).
    */
   public static int[] reverse(int[] arr) {
     int[] result = new int[arr.length];
@@ -34,13 +32,11 @@ public class ReverseArray {
   /**
    * Reverses the given array in place.
    * This method modifies the original array directly.
+   * <p>
+   * Time Complexity: O(n), where n is the number of elements in the array.
+   * Space Complexity: O(1), as the reversal is done in place.
    *
    * @param arr The input array to be reversed.
-   *
-   *            Time complexity: O(n), where n is the number of elements in the
-   *            array.
-   *            Space complexity: O(1) as the reversal is done in place.
-   *            Auxiliary space: O(1).
    */
   public static void reverseInPlace(int[] arr) {
     for (int i = 0; i < arr.length / 2; i++) {

@@ -31,6 +31,15 @@ public class FirstBadVersion {
      * @param n The total number of versions.
      * @return The first bad version.
      */
+    /**
+     * Finds the first bad version.
+     * <p>
+     * Time Complexity: O(log n), where n is the total number of versions.
+     * Space Complexity: O(1)
+     *
+     * @param n The total number of versions.
+     * @return The first bad version.
+     */
     static int firstBadVersion(int n) {
         int min = 1;
         int max = n;

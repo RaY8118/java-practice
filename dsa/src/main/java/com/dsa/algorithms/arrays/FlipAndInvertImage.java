@@ -28,6 +28,10 @@ public class FlipAndInvertImage {
      * First, each row of the image is reversed. Then, the values are inverted (0
      * becomes 1, and 1 becomes 0).
      *
+     * <p>
+     * Time Complexity: O(n*m) where n is the number of rows and m is the number of columns.
+     * Space Complexity: O(1)
+     *
      * @param image The binary image represented as a 2D integer array.
      * @return The transformed 2D integer array.
      */

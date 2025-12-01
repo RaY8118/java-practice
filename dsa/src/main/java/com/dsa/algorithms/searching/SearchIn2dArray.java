@@ -37,6 +37,18 @@ public class SearchIn2dArray {
      * @return An integer array of size 2, containing the row and column index of the target
      *         if found. Returns {-1, -1} if the target is not found or the array is empty.
      */
+    /**
+     * Searches for a target element in a 2D integer array.
+     * It iterates through each element of the array to find a match.
+     * <p>
+     * Time Complexity: O(m * n), where m is the number of rows and n is the number of columns (total elements).
+     * Space Complexity: O(1)
+     *
+     * @param arr The 2D array to be searched.
+     * @param target The element to search for.
+     * @return An integer array of size 2, containing the row and column index of the target
+     *         if found. Returns {-1, -1} if the target is not found or the array is empty.
+     */
     static int[] search(int[][] arr, int target) {
         if (arr.length == 0) {
             return new int[] { -1, -1 };

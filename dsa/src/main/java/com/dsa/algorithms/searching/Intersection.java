@@ -27,6 +27,9 @@ public class Intersection {
 
     /**
      * Finds the intersection of two arrays.
+     * <p>
+     * Time Complexity: O(n log n + m log n) where n is the length of nums2 and m is the length of nums1.
+     * Space Complexity: O(min(m, n))
      *
      * @param nums1 The first array.
      * @param nums2 The second array.

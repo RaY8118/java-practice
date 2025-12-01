@@ -5,13 +5,30 @@ import java.util.Map;
 
 /**
  * This class demonstrates the basic functionalities of a HashMap in Java.
- * A HashMap stores key-value pairs. It is part of the Java Collections
- * Framework.
+ * A HashMap stores key-value pairs. It is part of the Java Collections Framework.
+ * <p>
  * Key characteristics:
- * - It does not maintain insertion order.
- * - It allows one null key and multiple null values.
- * - It provides O(1) average time complexity for put, get, and remove
- * operations.
+ * <ul>
+ *     <li>It does not maintain insertion order.</li>
+ *     <li>It allows one null key and multiple null values.</li>
+ *     <li>It is not synchronized (not thread-safe).</li>
+ *     <li>Underlying data structure: Hash table.</li>
+ * </ul>
+ * <p>
+ * Time Complexity for common operations (assuming good hash function and minimal collisions):
+ * <ul>
+ *     <li>`put(K key, V value)`: Average O(1), Worst Case O(n) (due to hash collisions or resizing)</li>
+ *     <li>`get(Object key)`: Average O(1), Worst Case O(n) (due to hash collisions)</li>
+ *     <li>`remove(Object key)`: Average O(1), Worst Case O(n) (due to hash collisions)</li>
+ *     <li>`containsKey(Object key)`: Average O(1), Worst Case O(n)</li>
+ *     <li>`containsValue(Object value)`: O(n) (requires iteration through all values)</li>
+ *     <li>`size()` / `isEmpty()`: O(1)</li>
+ * </ul>
+ * <p>
+ * Space Complexity:
+ * <ul>
+ *     <li>O(n) for storing n entries.</li>
+ * </ul>
  */
 public class HashMapExample {
 

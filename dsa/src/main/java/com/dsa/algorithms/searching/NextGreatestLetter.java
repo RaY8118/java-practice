@@ -30,6 +30,16 @@ public class NextGreatestLetter {
      * @param target  The target character.
      * @return The smallest character in the array that is larger than target.
      */
+    /**
+     * Finds the smallest character in the array that is larger than target.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the letters array.
+     * Space Complexity: O(1)
+     *
+     * @param letters The characters array, sorted in non-decreasing order.
+     * @param target  The target character.
+     * @return The smallest character in the array that is larger than target.
+     */
     static char nextGreatestLetter(char[] letters, char target) {
         int min = 0;
         int max = letters.length - 1;

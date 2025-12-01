@@ -19,6 +19,10 @@ public class FindNumbers {
   /**
    * Given an array of integers, returns how many of them contain an even number of digits.
    *
+   * <p>
+   * Time Complexity: O(n)
+   * Space Complexity: O(1)
+   *
    * @param nums The input array of integers.
    * @return The count of numbers with an even number of digits.
    */

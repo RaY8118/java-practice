@@ -10,6 +10,15 @@ import java.util.Stack;
  */
 public class NextGreater {
 
+    /**
+     * Finds and prints the next greater element for each element in an array.
+     * It utilizes a Stack data structure to efficiently determine the next greater elements.
+     * <p>
+     * Time Complexity: O(n), where n is the length of the array.
+     * Space Complexity: O(n), where n is the length of the array (in the worst case).
+     *
+     * @param arr The input array of integers.
+     */
     public static void printNextGreater(int[] arr) {
         if (arr.length == 0) {
             System.out.println();

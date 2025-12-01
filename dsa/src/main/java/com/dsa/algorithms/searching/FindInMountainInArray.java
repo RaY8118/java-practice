@@ -35,6 +35,20 @@ public class FindInMountainInArray {
      *         multiple times,
      *         it returns the smallest index.
      */
+    /**
+     * Finds the target value in a mountain array.
+     * This method first finds the peak element's index and then performs
+     * binary searches on both the ascending and descending parts of the array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array, due to multiple binary search operations.
+     * Space Complexity: O(1)
+     *
+     * @param target The value to find.
+     * @param arr    The mountain array.
+     * @return The index of the target if found, otherwise -1. If the target exists
+     *         multiple times,
+     *         it returns the smallest index.
+     */
     static int findInMountainInArray(int target, int[] arr) {
         int index = getIndexForPeak(arr);
         int idx1 = binarySearch1(arr, index, target);
@@ -50,6 +64,15 @@ public class FindInMountainInArray {
 
     /**
      * Finds the index of the peak element in a mountain array.
+     *
+     * @param arr The mountain array.
+     * @return The index of the peak element.
+     */
+    /**
+     * Finds the index of the peak element in a mountain array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
      *
      * @param arr The mountain array.
      * @return The index of the peak element.
@@ -78,6 +101,17 @@ public class FindInMountainInArray {
      * @param target The value to find.
      * @return The index of the target if found, otherwise -1.
      */
+    /**
+     * Performs a binary search on the ascending part of the mountain array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
+     *
+     * @param arr    The mountain array.
+     * @param end    The ending index for the search (typically the peak index).
+     * @param target The value to find.
+     * @return The index of the target if found, otherwise -1.
+     */
     static int binarySearch1(int[] arr, int end, int target) {
         int start = 0;
 
@@ -96,6 +130,17 @@ public class FindInMountainInArray {
 
     /**
      * Performs a binary search on the descending part of the mountain array.
+     *
+     * @param arr    The mountain array.
+     * @param start  The starting index for the search (typically the peak index).
+     * @param target The value to find.
+     * @return The index of the target if found, otherwise -1.
+     */
+    /**
+     * Performs a binary search on the descending part of the mountain array.
+     * <p>
+     * Time Complexity: O(log n), where n is the length of the array.
+     * Space Complexity: O(1)
      *
      * @param arr    The mountain array.
      * @param start  The starting index for the search (typically the peak index).

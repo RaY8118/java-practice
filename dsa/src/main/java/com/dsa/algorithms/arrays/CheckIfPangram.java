@@ -26,6 +26,9 @@ public class CheckIfPangram {
 
     /**
      * Checks if a sentence is a pangram.
+     * <p>
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      *
      * @param sentence The sentence to check.
      * @return True if the sentence is a pangram, false otherwise.

@@ -14,6 +14,16 @@ public class RotateArray {
    * @param numbers The array of integers to be rotated.
    * @return A new array with the elements rotated to the left by one position.
    */
+  /**
+   * Rotates the given integer array to the left by one position.
+   * The first element becomes the last element.
+   * <p>
+   * Time Complexity: O(n), where n is the number of elements in the array.
+   * Space Complexity: O(n), for the new array.
+   *
+   * @param numbers The array of integers to be rotated.
+   * @return A new array with the elements rotated to the left by one position.
+   */
   public static int[] rotateArray(int[] numbers) {
     int[] rotated = new int[numbers.length];
     for (int i = 1; i < numbers.length; i++) {

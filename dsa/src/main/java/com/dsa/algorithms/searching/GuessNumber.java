@@ -28,6 +28,15 @@ public class GuessNumber {
      * @param n The upper bound of the range in which to guess the number.
      * @return The secret number.
      */
+    /**
+     * Finds the secret number using binary search.
+     * <p>
+     * Time Complexity: O(log n), where n is the upper bound of the search range.
+     * Space Complexity: O(1)
+     *
+     * @param n The upper bound of the range in which to guess the number.
+     * @return The secret number.
+     */
     static int guessNumber(int n) {
         int min = 1;
         int max = n;
